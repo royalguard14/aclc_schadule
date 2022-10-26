@@ -1,0 +1,3142 @@
+ [
+        {
+            "code": "fa fa-500px",
+            "icons": "&#xf26e;"
+        },
+        {
+            "code": "fa fa-address-book",
+            "icons": "&#xf2b9;"
+        },
+        {
+            "code": "fa fa-address-book-o",
+            "icons": "&#xf2ba;"
+        },
+        {
+            "code": "fa fa-address-card",
+            "icons": "&#xf2bb;"
+        },
+        {
+            "code": "fa fa-address-card-o",
+            "icons": "&#xf2bc;"
+        },
+        {
+            "code": "fa fa-adjust",
+            "icons": "&#xf042;"
+        },
+        {
+            "code": "fa fa-adn",
+            "icons": "&#xf170;"
+        },
+        {
+            "code": "fa fa-align-center",
+            "icons": "&#xf037;"
+        },
+        {
+            "code": "fa fa-align-justify",
+            "icons": "&#xf039;"
+        },
+        {
+            "code": "fa fa-align-left",
+            "icons": "&#xf036;"
+        },
+        {
+            "code": "fa fa-align-right",
+            "icons": "&#xf038;"
+        },
+        {
+            "code": "fa fa-amazon",
+            "icons": "&#xf270;"
+        },
+        {
+            "code": "fa fa-ambulance",
+            "icons": "&#xf0f9;"
+        },
+        {
+            "code": "fa fa-american-sign-language-interpreting",
+            "icons": "&#xf2a3;"
+        },
+        {
+            "code": "fa fa-anchor",
+            "icons": "&#xf13d;"
+        },
+        {
+            "code": "fa fa-android",
+            "icons": "&#xf17b;"
+        },
+        {
+            "code": "fa fa-angellist",
+            "icons": "&#xf209;"
+        },
+        {
+            "code": "fa fa-angle-double-down",
+            "icons": "&#xf103;"
+        },
+        {
+            "code": "fa fa-angle-double-left",
+            "icons": "&#xf100;"
+        },
+        {
+            "code": "fa fa-angle-double-right",
+            "icons": "&#xf101;"
+        },
+        {
+            "code": "fa fa-angle-double-up",
+            "icons": "&#xf102;"
+        },
+        {
+            "code": "fa fa-angle-down",
+            "icons": "&#xf107;"
+        },
+        {
+            "code": "fa fa-angle-left",
+            "icons": "&#xf104;"
+        },
+        {
+            "code": "fa fa-angle-right",
+            "icons": "&#xf105;"
+        },
+        {
+            "code": "fa fa-angle-up",
+            "icons": "&#xf106;"
+        },
+        {
+            "code": "fa fa-apple",
+            "icons": "&#xf179;"
+        },
+        {
+            "code": "fa fa-archive",
+            "icons": "&#xf187;"
+        },
+        {
+            "code": "fa fa-area-chart",
+            "icons": "&#xf1fe;"
+        },
+        {
+            "code": "fa fa-arrow-circle-down",
+            "icons": "&#xf0ab;"
+        },
+        {
+            "code": "fa fa-arrow-circle-left",
+            "icons": "&#xf0a8;"
+        },
+        {
+            "code": "fa fa-arrow-circle-o-down",
+            "icons": "&#xf01a;"
+        },
+        {
+            "code": "fa fa-arrow-circle-o-left",
+            "icons": "&#xf190;"
+        },
+        {
+            "code": "fa fa-arrow-circle-o-right",
+            "icons": "&#xf18e;"
+        },
+        {
+            "code": "fa fa-arrow-circle-o-up",
+            "icons": "&#xf01b;"
+        },
+        {
+            "code": "fa fa-arrow-circle-right",
+            "icons": "&#xf0a9;"
+        },
+        {
+            "code": "fa fa-arrow-circle-up",
+            "icons": "&#xf0aa;"
+        },
+        {
+            "code": "fa fa-arrow-down",
+            "icons": "&#xf063;"
+        },
+        {
+            "code": "fa fa-arrow-left",
+            "icons": "&#xf060;"
+        },
+        {
+            "code": "fa fa-arrow-right",
+            "icons": "&#xf061;"
+        },
+        {
+            "code": "fa fa-arrow-up",
+            "icons": "&#xf062;"
+        },
+        {
+            "code": "fa fa-arrows",
+            "icons": "&#xf047;"
+        },
+        {
+            "code": "fa fa-arrows-alt",
+            "icons": "&#xf0b2;"
+        },
+        {
+            "code": "fa fa-arrows-h",
+            "icons": "&#xf07e;"
+        },
+        {
+            "code": "fa fa-arrows-v",
+            "icons": "&#xf07d;"
+        },
+        {
+            "code": "fa fa-asl-interpreting",
+            "icons": "&#xf2a3;"
+        },
+        {
+            "code": "fa fa-assistive-listening-systems",
+            "icons": "&#xf2a2;"
+        },
+        {
+            "code": "fa fa-asterisk",
+            "icons": "&#xf069;"
+        },
+        {
+            "code": "fa fa-at",
+            "icons": "&#xf1fa;"
+        },
+        {
+            "code": "fa fa-audio-description",
+            "icons": "&#xf29e;"
+        },
+        {
+            "code": "fa fa-automobile",
+            "icons": "&#xf1b9;"
+        },
+        {
+            "code": "fa fa-backward",
+            "icons": "&#xf04a;"
+        },
+        {
+            "code": "fa fa-balance-scale",
+            "icons": "&#xf24e;"
+        },
+        {
+            "code": "fa fa-ban",
+            "icons": "&#xf05e;"
+        },
+        {
+            "code": "fa fa-bandcamp",
+            "icons": "&#xf2d5;"
+        },
+        {
+            "code": "fa fa-bank",
+            "icons": "&#xf19c;"
+        },
+        {
+            "code": "fa fa-bar-chart",
+            "icons": "&#xf080;"
+        },
+        {
+            "code": "fa fa-bar-chart-o",
+            "icons": "&#xf080;"
+        },
+        {
+            "code": "fa fa-barcode",
+            "icons": "&#xf02a;"
+        },
+        {
+            "code": "fa fa-bars",
+            "icons": "&#xf0c9;"
+        },
+        {
+            "code": "fa fa-bath",
+            "icons": "&#xf2cd;"
+        },
+        {
+            "code": "fa fa-bathtub",
+            "icons": "&#xf2cd;"
+        },
+        {
+            "code": "fa fa-battery-0",
+            "icons": "&#xf244;"
+        },
+        {
+            "code": "fa fa-battery-1",
+            "icons": "&#xf243;"
+        },
+        {
+            "code": "fa fa-battery-2",
+            "icons": "&#xf242;"
+        },
+        {
+            "code": "fa fa-battery-3",
+            "icons": "&#xf241;"
+        },
+        {
+            "code": "fa fa-battery-4",
+            "icons": "&#xf240;"
+        },
+        {
+            "code": "fa fa-battery-empty",
+            "icons": "&#xf244;"
+        },
+        {
+            "code": "fa fa-battery-full",
+            "icons": "&#xf240;"
+        },
+        {
+            "code": "fa fa-battery-half",
+            "icons": "&#xf242;"
+        },
+        {
+            "code": "fa fa-battery-quarter",
+            "icons": "&#xf243;"
+        },
+        {
+            "code": "fa fa-battery-three-quarters",
+            "icons": "&#xf241;"
+        },
+        {
+            "code": "fa fa-bed",
+            "icons": "&#xf236;"
+        },
+        {
+            "code": "fa fa-beer",
+            "icons": "&#xf0fc;"
+        },
+        {
+            "code": "fa fa-behance",
+            "icons": "&#xf1b4;"
+        },
+        {
+            "code": "fa fa-behance-square",
+            "icons": "&#xf1b5;"
+        },
+        {
+            "code": "fa fa-bell",
+            "icons": "&#xf0f3;"
+        },
+        {
+            "code": "fa fa-bell-o",
+            "icons": "&#xf0a2;"
+        },
+        {
+            "code": "fa fa-bell-slash",
+            "icons": "&#xf1f6;"
+        },
+        {
+            "code": "fa fa-bell-slash-o",
+            "icons": "&#xf1f7;"
+        },
+        {
+            "code": "fa fa-bicycle",
+            "icons": "&#xf206;"
+        },
+        {
+            "code": "fa fa-binoculars",
+            "icons": "&#xf1e5;"
+        },
+        {
+            "code": "fa fa-birthday-cake",
+            "icons": "&#xf1fd;"
+        },
+        {
+            "code": "fa fa-bitbucket",
+            "icons": "&#xf171;"
+        },
+        {
+            "code": "fa fa-bitbucket-square",
+            "icons": "&#xf172;"
+        },
+        {
+            "code": "fa fa-bitcoin",
+            "icons": "&#xf15a;"
+        },
+        {
+            "code": "fa fa-black-tie",
+            "icons": "&#xf27e;"
+        },
+        {
+            "code": "fa fa-blind",
+            "icons": "&#xf29d;"
+        },
+        {
+            "code": "fa fa-bluetooth",
+            "icons": "&#xf293;"
+        },
+        {
+            "code": "fa fa-bluetooth-b",
+            "icons": "&#xf294;"
+        },
+        {
+            "code": "fa fa-bold",
+            "icons": "&#xf032;"
+        },
+        {
+            "code": "fa fa-bolt",
+            "icons": "&#xf0e7;"
+        },
+        {
+            "code": "fa fa-bomb",
+            "icons": "&#xf1e2;"
+        },
+        {
+            "code": "fa fa-book",
+            "icons": "&#xf02d;"
+        },
+        {
+            "code": "fa fa-bookmark",
+            "icons": "&#xf02e;"
+        },
+        {
+            "code": "fa fa-bookmark-o",
+            "icons": "&#xf097;"
+        },
+        {
+            "code": "fa fa-braille",
+            "icons": "&#xf2a1;"
+        },
+        {
+            "code": "fa fa-briefcase",
+            "icons": "&#xf0b1;"
+        },
+        {
+            "code": "fa fa-btc",
+            "icons": "&#xf15a;"
+        },
+        {
+            "code": "fa fa-bug",
+            "icons": "&#xf188;"
+        },
+        {
+            "code": "fa fa-building",
+            "icons": "&#xf1ad;"
+        },
+        {
+            "code": "fa fa-building-o",
+            "icons": "&#xf0f7;"
+        },
+        {
+            "code": "fa fa-bullhorn",
+            "icons": "&#xf0a1;"
+        },
+        {
+            "code": "fa fa-bullseye",
+            "icons": "&#xf140;"
+        },
+        {
+            "code": "fa fa-bus",
+            "icons": "&#xf207;"
+        },
+        {
+            "code": "fa fa-buysellads",
+            "icons": "&#xf20d;"
+        },
+        {
+            "code": "fa fa-cab",
+            "icons": "&#xf1ba;"
+        },
+        {
+            "code": "fa fa-calculator",
+            "icons": "&#xf1ec;"
+        },
+        {
+            "code": "fa fa-calendar",
+            "icons": "&#xf073;"
+        },
+        {
+            "code": "fa fa-calendar-check-o",
+            "icons": "&#xf274;"
+        },
+        {
+            "code": "fa fa-calendar-minus-o",
+            "icons": "&#xf272;"
+        },
+        {
+            "code": "fa fa-calendar-o",
+            "icons": "&#xf133;"
+        },
+        {
+            "code": "fa fa-calendar-plus-o",
+            "icons": "&#xf271;"
+        },
+        {
+            "code": "fa fa-calendar-times-o",
+            "icons": "&#xf273;"
+        },
+        {
+            "code": "fa fa-camera",
+            "icons": "&#xf030;"
+        },
+        {
+            "code": "fa fa-camera-retro",
+            "icons": "&#xf083;"
+        },
+        {
+            "code": "fa fa-car",
+            "icons": "&#xf1b9;"
+        },
+        {
+            "code": "fa fa-caret-down",
+            "icons": "&#xf0d7;"
+        },
+        {
+            "code": "fa fa-caret-left",
+            "icons": "&#xf0d9;"
+        },
+        {
+            "code": "fa fa-caret-right",
+            "icons": "&#xf0da;"
+        },
+        {
+            "code": "fa fa-caret-square-o-down",
+            "icons": "&#xf150;"
+        },
+        {
+            "code": "fa fa-caret-square-o-left",
+            "icons": "&#xf191;"
+        },
+        {
+            "code": "fa fa-caret-square-o-right",
+            "icons": "&#xf152;"
+        },
+        {
+            "code": "fa fa-caret-square-o-up",
+            "icons": "&#xf151;"
+        },
+        {
+            "code": "fa fa-caret-up",
+            "icons": "&#xf0d8;"
+        },
+        {
+            "code": "fa fa-cart-arrow-down",
+            "icons": "&#xf218;"
+        },
+        {
+            "code": "fa fa-cart-plus",
+            "icons": "&#xf217;"
+        },
+        {
+            "code": "fa fa-cc",
+            "icons": "&#xf20a;"
+        },
+        {
+            "code": "fa fa-cc-amex",
+            "icons": "&#xf1f3;"
+        },
+        {
+            "code": "fa fa-cc-diners-club",
+            "icons": "&#xf24c;"
+        },
+        {
+            "code": "fa fa-cc-discover",
+            "icons": "&#xf1f2;"
+        },
+        {
+            "code": "fa fa-cc-jcb",
+            "icons": "&#xf24b;"
+        },
+        {
+            "code": "fa fa-cc-mastercard",
+            "icons": "&#xf1f1;"
+        },
+        {
+            "code": "fa fa-cc-paypal",
+            "icons": "&#xf1f4;"
+        },
+        {
+            "code": "fa fa-cc-stripe",
+            "icons": "&#xf1f5;"
+        },
+        {
+            "code": "fa fa-cc-visa",
+            "icons": "&#xf1f0;"
+        },
+        {
+            "code": "fa fa-certificate",
+            "icons": "&#xf0a3;"
+        },
+        {
+            "code": "fa fa-chain",
+            "icons": "&#xf0c1;"
+        },
+        {
+            "code": "fa fa-chain-broken",
+            "icons": "&#xf127;"
+        },
+        {
+            "code": "fa fa-check",
+            "icons": "&#xf00c;"
+        },
+        {
+            "code": "fa fa-check-circle",
+            "icons": "&#xf058;"
+        },
+        {
+            "code": "fa fa-check-circle-o",
+            "icons": "&#xf05d;"
+        },
+        {
+            "code": "fa fa-check-square",
+            "icons": "&#xf14a;"
+        },
+        {
+            "code": "fa fa-check-square-o",
+            "icons": "&#xf046;"
+        },
+        {
+            "code": "fa fa-chevron-circle-down",
+            "icons": "&#xf13a;"
+        },
+        {
+            "code": "fa fa-chevron-circle-left",
+            "icons": "&#xf137;"
+        },
+        {
+            "code": "fa fa-chevron-circle-right",
+            "icons": "&#xf138;"
+        },
+        {
+            "code": "fa fa-chevron-circle-up",
+            "icons": "&#xf139;"
+        },
+        {
+            "code": "fa fa-chevron-down",
+            "icons": "&#xf078;"
+        },
+        {
+            "code": "fa fa-chevron-left",
+            "icons": "&#xf053;"
+        },
+        {
+            "code": "fa fa-chevron-right",
+            "icons": "&#xf054;"
+        },
+        {
+            "code": "fa fa-chevron-up",
+            "icons": "&#xf077;"
+        },
+        {
+            "code": "fa fa-child",
+            "icons": "&#xf1ae;"
+        },
+        {
+            "code": "fa fa-chrome",
+            "icons": "&#xf268;"
+        },
+        {
+            "code": "fa fa-circle",
+            "icons": "&#xf111;"
+        },
+        {
+            "code": "fa fa-circle-o",
+            "icons": "&#xf10c;"
+        },
+        {
+            "code": "fa fa-circle-o-notch",
+            "icons": "&#xf1ce;"
+        },
+        {
+            "code": "fa fa-circle-thin",
+            "icons": "&#xf1db;"
+        },
+        {
+            "code": "fa fa-clipboard",
+            "icons": "&#xf0ea;"
+        },
+        {
+            "code": "fa fa-clock-o",
+            "icons": "&#xf017;"
+        },
+        {
+            "code": "fa fa-clone",
+            "icons": "&#xf24d;"
+        },
+        {
+            "code": "fa fa-close",
+            "icons": "&#xf00d;"
+        },
+        {
+            "code": "fa fa-cloud",
+            "icons": "&#xf0c2;"
+        },
+        {
+            "code": "fa fa-cloud-download",
+            "icons": "&#xf0ed;"
+        },
+        {
+            "code": "fa fa-cloud-upload",
+            "icons": "&#xf0ee;"
+        },
+        {
+            "code": "fa fa-cny",
+            "icons": "&#xf157;"
+        },
+        {
+            "code": "fa fa-code",
+            "icons": "&#xf121;"
+        },
+        {
+            "code": "fa fa-code-fork",
+            "icons": "&#xf126;"
+        },
+        {
+            "code": "fa fa-codepen",
+            "icons": "&#xf1cb;"
+        },
+        {
+            "code": "fa fa-codiepie",
+            "icons": "&#xf284;"
+        },
+        {
+            "code": "fa fa-coffee",
+            "icons": "&#xf0f4;"
+        },
+        {
+            "code": "fa fa-cog",
+            "icons": "&#xf013;"
+        },
+        {
+            "code": "fa fa-cogs",
+            "icons": "&#xf085;"
+        },
+        {
+            "code": "fa fa-columns",
+            "icons": "&#xf0db;"
+        },
+        {
+            "code": "fa fa-comment",
+            "icons": "&#xf075;"
+        },
+        {
+            "code": "fa fa-comment-o",
+            "icons": "&#xf0e5;"
+        },
+        {
+            "code": "fa fa-comments",
+            "icons": "&#xf086;"
+        },
+        {
+            "code": "fa fa-comments-o",
+            "icons": "&#xf0e6;"
+        },
+        {
+            "code": "fa fa-commenting",
+            "icons": "&#xf27a;"
+        },
+        {
+            "code": "fa fa-commenting-o",
+            "icons": "&#xf27b;"
+        },
+        {
+            "code": "fa fa-compass",
+            "icons": "&#xf14e;"
+        },
+        {
+            "code": "fa fa-compress",
+            "icons": "&#xf066;"
+        },
+        {
+            "code": "fa fa-connectdevelop",
+            "icons": "&#xf20e;"
+        },
+        {
+            "code": "fa fa-contao",
+            "icons": "&#xf26d;"
+        },
+        {
+            "code": "fa fa-copy",
+            "icons": "&#xf0c5;"
+        },
+        {
+            "code": "fa fa-copyright",
+            "icons": "&#xf1f9;"
+        },
+        {
+            "code": "fa fa-creative-commons",
+            "icons": "&#xf25e;"
+        },
+        {
+            "code": "fa fa-credit-card",
+            "icons": "&#xf09d;"
+        },
+        {
+            "code": "fa fa-credit-card-alt",
+            "icons": "&#xf283;"
+        },
+        {
+            "code": "fa fa-crop",
+            "icons": "&#xf125;"
+        },
+        {
+            "code": "fa fa-crosshairs",
+            "icons": "&#xf05b;"
+        },
+        {
+            "code": "fa fa-css3",
+            "icons": "&#xf13c;"
+        },
+        {
+            "code": "fa fa-cube",
+            "icons": "&#xf1b2;"
+        },
+        {
+            "code": "fa fa-cubes",
+            "icons": "&#xf1b3;"
+        },
+        {
+            "code": "fa fa-cut",
+            "icons": "&#xf0c4;"
+        },
+        {
+            "code": "fa fa-cutlery",
+            "icons": "&#xf0f5;"
+        },
+        {
+            "code": "fa fa-dashboard",
+            "icons": "&#xf0e4;"
+        },
+        {
+            "code": "fa fa-dashcube",
+            "icons": "&#xf210;"
+        },
+        {
+            "code": "fa fa-database",
+            "icons": "&#xf1c0;"
+        },
+        {
+            "code": "fa fa-deaf",
+            "icons": "&#xf2a4;"
+        },
+        {
+            "code": "fa fa-deafness",
+            "icons": "&#xf2a4;"
+        },
+        {
+            "code": "fa fa-dedent",
+            "icons": "&#xf03b;"
+        },
+        {
+            "code": "fa fa-delicious",
+            "icons": "&#xf1a5;"
+        },
+        {
+            "code": "fa fa-desktop",
+            "icons": "&#xf108;"
+        },
+        {
+            "code": "fa fa-deviantart",
+            "icons": "&#xf1bd;"
+        },
+        {
+            "code": "fa fa-diamond",
+            "icons": "&#xf219;"
+        },
+        {
+            "code": "fa fa-digg",
+            "icons": "&#xf1a6;"
+        },
+        {
+            "code": "fa fa-dollar",
+            "icons": "&#xf155;"
+        },
+        {
+            "code": "fa fa-dot-circle-o",
+            "icons": "&#xf192;"
+        },
+        {
+            "code": "fa fa-download",
+            "icons": "&#xf019;"
+        },
+        {
+            "code": "fa fa-dribbble",
+            "icons": "&#xf17d;"
+        },
+        {
+            "code": "fa fa-drivers-license",
+            "icons": "&#xf2c2;"
+        },
+        {
+            "code": "fa fa-drivers-license-o",
+            "icons": "&#xf2c3;"
+        },
+        {
+            "code": "fa fa-dropbox",
+            "icons": "&#xf16b;"
+        },
+        {
+            "code": "fa fa-drupal",
+            "icons": "&#xf1a9;"
+        },
+        {
+            "code": "fa fa-edge",
+            "icons": "&#xf282;"
+        },
+        {
+            "code": "fa fa-edit",
+            "icons": "&#xf044;"
+        },
+        {
+            "code": "fa fa-eercast",
+            "icons": "&#xf2da;"
+        },
+        {
+            "code": "fa fa-eject",
+            "icons": "&#xf052;"
+        },
+        {
+            "code": "fa fa-ellipsis-h",
+            "icons": "&#xf141;"
+        },
+        {
+            "code": "fa fa-ellipsis-v",
+            "icons": "&#xf142;"
+        },
+        {
+            "code": "fa fa-empire",
+            "icons": "&#xf1d1;"
+        },
+        {
+            "code": "fa fa-envelope",
+            "icons": "&#xf0e0;"
+        },
+        {
+            "code": "fa fa-envelope-o",
+            "icons": "&#xf003;"
+        },
+        {
+            "code": "fa fa-envelope-open",
+            "icons": "&#xf2b6;"
+        },
+        {
+            "code": "fa fa-envelope-open-o",
+            "icons": "&#xf2b7;"
+        },
+        {
+            "code": "fa fa-envelope-square",
+            "icons": "&#xf199;"
+        },
+        {
+            "code": "fa fa-envira",
+            "icons": "&#xf299;"
+        },
+        {
+            "code": "fa fa-eraser",
+            "icons": "&#xf12d;"
+        },
+        {
+            "code": "fa fa-etsy",
+            "icons": "&#xf2d7;"
+        },
+        {
+            "code": "fa fa-eur",
+            "icons": "&#xf153;"
+        },
+        {
+            "code": "fa fa-euro",
+            "icons": "&#xf153;"
+        },
+        {
+            "code": "fa fa-exchange",
+            "icons": "&#xf0ec;"
+        },
+        {
+            "code": "fa fa-exclamation",
+            "icons": "&#xf12a;"
+        },
+        {
+            "code": "fa fa-exclamation-circle",
+            "icons": "&#xf06a;"
+        },
+        {
+            "code": "fa fa-exclamation-triangle",
+            "icons": "&#xf071;"
+        },
+        {
+            "code": "fa fa-expand",
+            "icons": "&#xf065;"
+        },
+        {
+            "code": "fa fa-expeditedssl",
+            "icons": "&#xf23e;"
+        },
+        {
+            "code": "fa fa-external-link",
+            "icons": "&#xf08e;"
+        },
+        {
+            "code": "fa fa-external-link-square",
+            "icons": "&#xf14c;"
+        },
+        {
+            "code": "fa fa-eye",
+            "icons": "&#xf06e;"
+        },
+        {
+            "code": "fa fa-eye-slash",
+            "icons": "&#xf070;"
+        },
+        {
+            "code": "fa fa-eyedropper",
+            "icons": "&#xf1fb;"
+        },
+        {
+            "code": "fa fa-font-awesome",
+            "icons": "&#xf2b4;"
+        },
+        {
+            "code": "fa fa-facebook",
+            "icons": "&#xf09a;"
+        },
+        {
+            "code": "fa fa-facebook-f",
+            "icons": "&#xf09a;"
+        },
+        {
+            "code": "fa fa-facebook-official",
+            "icons": "&#xf230;"
+        },
+        {
+            "code": "fa fa-facebook-square",
+            "icons": "&#xf082;"
+        },
+        {
+            "code": "fa fa-fast-backward",
+            "icons": "&#xf049;"
+        },
+        {
+            "code": "fa fa-fast-forward",
+            "icons": "&#xf050;"
+        },
+        {
+            "code": "fa fa-fax",
+            "icons": "&#xf1ac;"
+        },
+        {
+            "code": "fa fa-feed",
+            "icons": "&#xf09e;"
+        },
+        {
+            "code": "fa fa-female",
+            "icons": "&#xf182;"
+        },
+        {
+            "code": "fa fa-fighter-jet",
+            "icons": "&#xf0fb;"
+        },
+        {
+            "code": "fa fa-file",
+            "icons": "&#xf15b;"
+        },
+        {
+            "code": "fa fa-file-archive-o",
+            "icons": "&#xf1c6;"
+        },
+        {
+            "code": "fa fa-file-audio-o",
+            "icons": "&#xf1c7;"
+        },
+        {
+            "code": "fa fa-file-code-o",
+            "icons": "&#xf1c9;"
+        },
+        {
+            "code": "fa fa-file-excel-o",
+            "icons": "&#xf1c3;"
+        },
+        {
+            "code": "fa fa-file-image-o",
+            "icons": "&#xf1c5;"
+        },
+        {
+            "code": "fa fa-file-movie-o",
+            "icons": "&#xf1c8;"
+        },
+        {
+            "code": "fa fa-file-o",
+            "icons": "&#xf016;"
+        },
+        {
+            "code": "fa fa-file-pdf-o",
+            "icons": "&#xf1c1;"
+        },
+        {
+            "code": "fa fa-file-photo-o",
+            "icons": "&#xf1c5;"
+        },
+        {
+            "code": "fa fa-file-picture-o",
+            "icons": "&#xf1c5;"
+        },
+        {
+            "code": "fa fa-file-powerpoint-o",
+            "icons": "&#xf1c4;"
+        },
+        {
+            "code": "fa fa-file-sound-o",
+            "icons": "&#xf1c7;"
+        },
+        {
+            "code": "fa fa-file-text",
+            "icons": "&#xf15c;"
+        },
+        {
+            "code": "fa fa-file-text-o",
+            "icons": "&#xf0f6;"
+        },
+        {
+            "code": "fa fa-file-video-o",
+            "icons": "&#xf1c8;"
+        },
+        {
+            "code": "fa fa-file-word-o",
+            "icons": "&#xf1c2;"
+        },
+        {
+            "code": "fa fa-file-zip-o",
+            "icons": "&#xf1c6;"
+        },
+        {
+            "code": "fa fa-files-o",
+            "icons": "&#xf0c5;"
+        },
+        {
+            "code": "fa fa-film",
+            "icons": "&#xf008;"
+        },
+        {
+            "code": "fa fa-filter",
+            "icons": "&#xf0b0;"
+        },
+        {
+            "code": "fa fa-fire",
+            "icons": "&#xf06d;"
+        },
+        {
+            "code": "fa fa-fire-extinguisher",
+            "icons": "&#xf134;"
+        },
+        {
+            "code": "fa fa-firefox",
+            "icons": "&#xf269;"
+        },
+        {
+            "code": "fa fa-first-order",
+            "icons": "&#xf2b0;"
+        },
+        {
+            "code": "fa fa-flag",
+            "icons": "&#xf024;"
+        },
+        {
+            "code": "fa fa-flag-checkered",
+            "icons": "&#xf11e;"
+        },
+        {
+            "code": "fa fa-flag-o",
+            "icons": "&#xf11d;"
+        },
+        {
+            "code": "fa fa-flash",
+            "icons": "&#xf0e7;"
+        },
+        {
+            "code": "fa fa-flask",
+            "icons": "&#xf0c3;"
+        },
+        {
+            "code": "fa fa-flickr",
+            "icons": "&#xf16e;"
+        },
+        {
+            "code": "fa fa-floppy-o",
+            "icons": "&#xf0c7;"
+        },
+        {
+            "code": "fa fa-folder",
+            "icons": "&#xf07b;"
+        },
+        {
+            "code": "fa fa-folder-o",
+            "icons": "&#xf114;"
+        },
+        {
+            "code": "fa fa-folder-open",
+            "icons": "&#xf07c;"
+        },
+        {
+            "code": "fa fa-folder-open-o",
+            "icons": "&#xf115;"
+        },
+        {
+            "code": "fa fa-font",
+            "icons": "&#xf031;"
+        },
+        {
+            "code": "fa fa-font-awesome",
+            "icons": "&#xf2b4;"
+        },
+        {
+            "code": "fa fa-fonticons",
+            "icons": "&#xf280;"
+        },
+        {
+            "code": "fa fa-fort-awesome",
+            "icons": "&#xf286;"
+        },
+        {
+            "code": "fa fa-forumbee",
+            "icons": "&#xf211;"
+        },
+        {
+            "code": "fa fa-forward",
+            "icons": "&#xf04e;"
+        },
+        {
+            "code": "fa fa-foursquare",
+            "icons": "&#xf180;"
+        },
+        {
+            "code": "fa fa-free-code-camp",
+            "icons": "&#xf2c5;"
+        },
+        {
+            "code": "fa fa-frown-o",
+            "icons": "&#xf119;"
+        },
+        {
+            "code": "fa fa-futbol-o",
+            "icons": "&#xf1e3;"
+        },
+        {
+            "code": "fa fa-gamepad",
+            "icons": "&#xf11b;"
+        },
+        {
+            "code": "fa fa-gavel",
+            "icons": "&#xf0e3;"
+        },
+        {
+            "code": "fa fa-gbp",
+            "icons": "&#xf154;"
+        },
+        {
+            "code": "fa fa-ge",
+            "icons": "&#xf1d1;"
+        },
+        {
+            "code": "fa fa-gear",
+            "icons": "&#xf013;"
+        },
+        {
+            "code": "fa fa-gears",
+            "icons": "&#xf085;"
+        },
+        {
+            "code": "fa fa-genderless",
+            "icons": "&#xf22d;"
+        },
+        {
+            "code": "fa fa-get-pocket",
+            "icons": "&#xf265;"
+        },
+        {
+            "code": "fa fa-gg",
+            "icons": "&#xf260;"
+        },
+        {
+            "code": "fa fa-gg-circle",
+            "icons": "&#xf261;"
+        },
+        {
+            "code": "fa fa-gift",
+            "icons": "&#xf06b;"
+        },
+        {
+            "code": "fa fa-git",
+            "icons": "&#xf1d3;"
+        },
+        {
+            "code": "fa fa-git-square",
+            "icons": "&#xf1d2;"
+        },
+        {
+            "code": "fa fa-github",
+            "icons": "&#xf09b;"
+        },
+        {
+            "code": "fa fa-github-alt",
+            "icons": "&#xf113;"
+        },
+        {
+            "code": "fa fa-github-square",
+            "icons": "&#xf092;"
+        },
+        {
+            "code": "fa fa-gitlab",
+            "icons": "&#xf296;"
+        },
+        {
+            "code": "fa fa-gittip",
+            "icons": "&#xf184;"
+        },
+        {
+            "code": "fa fa-glass",
+            "icons": "&#xf000;"
+        },
+        {
+            "code": "fa fa-glide",
+            "icons": "&#xf2a5;"
+        },
+        {
+            "code": "fa fa-glide-g",
+            "icons": "&#xf2a6;"
+        },
+        {
+            "code": "fa fa-globe",
+            "icons": "&#xf0ac;"
+        },
+        {
+            "code": "fa fa-google",
+            "icons": "&#xf1a0;"
+        },
+        {
+            "code": "fa fa-google-plus",
+            "icons": "&#xf0d5;"
+        },
+        {
+            "code": "fa fa-google-plus-circle",
+            "icons": "&#xf2b3;"
+        },
+        {
+            "code": "fa fa-google-plus-official",
+            "icons": "&#xf2b3;"
+        },
+        {
+            "code": "fa fa-google-plus-square",
+            "icons": "&#xf0d4;"
+        },
+        {
+            "code": "fa fa-google-wallet",
+            "icons": "&#xf1ee;"
+        },
+        {
+            "code": "fa fa-graduation-cap",
+            "icons": "&#xf19d;"
+        },
+        {
+            "code": "fa fa-gratipay",
+            "icons": "&#xf184;"
+        },
+        {
+            "code": "fa fa-grav",
+            "icons": "&#xf2d6;"
+        },
+        {
+            "code": "fa fa-group",
+            "icons": "&#xf0c0;"
+        },
+        {
+            "code": "fa fa-h-square",
+            "icons": "&#xf0fd;"
+        },
+        {
+            "code": "fa fa-hacker-news",
+            "icons": "&#xf1d4;"
+        },
+        {
+            "code": "fa fa-hand-grab-o",
+            "icons": "&#xf255;"
+        },
+        {
+            "code": "fa fa-hand-lizard-o",
+            "icons": "&#xf258;"
+        },
+        {
+            "code": "fa fa-hand-o-down",
+            "icons": "&#xf0a7;"
+        },
+        {
+            "code": "fa fa-hand-o-left",
+            "icons": "&#xf0a5;"
+        },
+        {
+            "code": "fa fa-hand-o-right",
+            "icons": "&#xf0a4;"
+        },
+        {
+            "code": "fa fa-hand-o-up",
+            "icons": "&#xf0a6;"
+        },
+        {
+            "code": "fa fa-hand-paper-o",
+            "icons": "&#xf256;"
+        },
+        {
+            "code": "fa fa-hand-peace-o",
+            "icons": "&#xf25b;"
+        },
+        {
+            "code": "fa fa-hand-pointer-o",
+            "icons": "&#xf25a;"
+        },
+        {
+            "code": "fa fa-hand-rock-o",
+            "icons": "&#xf255;"
+        },
+        {
+            "code": "fa fa-hand-scissors-o",
+            "icons": "&#xf257;"
+        },
+        {
+            "code": "fa fa-hand-spock-o",
+            "icons": "&#xf259;"
+        },
+        {
+            "code": "fa fa-hand-stop-o",
+            "icons": "&#xf256;"
+        },
+        {
+            "code": "fa fa-handshake-o",
+            "icons": "&#xf2b5;"
+        },
+        {
+            "code": "fa fa-hard-of-hearing",
+            "icons": "&#xf2a4;"
+        },
+        {
+            "code": "fa fa-hashtag",
+            "icons": "&#xf292;"
+        },
+        {
+            "code": "fa fa-hdd-o",
+            "icons": "&#xf0a0;"
+        },
+        {
+            "code": "fa fa-header",
+            "icons": "&#xf1dc;"
+        },
+        {
+            "code": "fa fa-headphones",
+            "icons": "&#xf025;"
+        },
+        {
+            "code": "fa fa-heart",
+            "icons": "&#xf004;"
+        },
+        {
+            "code": "fa fa-heart-o",
+            "icons": "&#xf08a;"
+        },
+        {
+            "code": "fa fa-heartbeat",
+            "icons": "&#xf21e;"
+        },
+        {
+            "code": "fa fa-history",
+            "icons": "&#xf1da;"
+        },
+        {
+            "code": "fa fa-home",
+            "icons": "&#xf015;"
+        },
+        {
+            "code": "fa fa-hospital-o",
+            "icons": "&#xf0f8;"
+        },
+        {
+            "code": "fa fa-hotel",
+            "icons": "&#xf236;"
+        },
+        {
+            "code": "fa fa-hourglass",
+            "icons": "&#xf254;"
+        },
+        {
+            "code": "fa fa-hourglass-1",
+            "icons": "&#xf251;"
+        },
+        {
+            "code": "fa fa-hourglass-2",
+            "icons": "&#xf252;"
+        },
+        {
+            "code": "fa fa-hourglass-3",
+            "icons": "&#xf253;"
+        },
+        {
+            "code": "fa fa-hourglass-end",
+            "icons": "&#xf253;"
+        },
+        {
+            "code": "fa fa-hourglass-half",
+            "icons": "&#xf252;"
+        },
+        {
+            "code": "fa fa-hourglass-o",
+            "icons": "&#xf250;"
+        },
+        {
+            "code": "fa fa-hourglass-start",
+            "icons": "&#xf251;"
+        },
+        {
+            "code": "fa fa-houzz",
+            "icons": "&#xf27c;"
+        },
+        {
+            "code": "fa fa-html5",
+            "icons": "&#xf13b;"
+        },
+        {
+            "code": "fa fa-i-cursor",
+            "icons": "&#xf246;"
+        },
+        {
+            "code": "fa fa-id-badge",
+            "icons": "&#xf2c1;"
+        },
+        {
+            "code": "fa fa-id-card",
+            "icons": "&#xf2c2;"
+        },
+        {
+            "code": "fa fa-id-card-o",
+            "icons": "&#xf2c3;"
+        },
+        {
+            "code": "fa fa-ils",
+            "icons": "&#xf20b;"
+        },
+        {
+            "code": "fa fa-image",
+            "icons": "&#xf03e;"
+        },
+        {
+            "code": "fa fa-imdb",
+            "icons": "&#xf2d8;"
+        },
+        {
+            "code": "fa fa-inbox",
+            "icons": "&#xf01c;"
+        },
+        {
+            "code": "fa fa-indent",
+            "icons": "&#xf03c;"
+        },
+        {
+            "code": "fa fa-industry",
+            "icons": "&#xf275;"
+        },
+        {
+            "code": "fa fa-info",
+            "icons": "&#xf129;"
+        },
+        {
+            "code": "fa fa-info-circle",
+            "icons": "&#xf05a;"
+        },
+        {
+            "code": "fa fa-inr",
+            "icons": "&#xf156;"
+        },
+        {
+            "code": "fa fa-instagram",
+            "icons": "&#xf16d;"
+        },
+        {
+            "code": "fa fa-institution",
+            "icons": "&#xf19c;"
+        },
+        {
+            "code": "fa fa-internet-explorer",
+            "icons": "&#xf26b;"
+        },
+        {
+            "code": "fa fa-intersex",
+            "icons": "&#xf224;"
+        },
+        {
+            "code": "fa fa-ioxhost",
+            "icons": "&#xf208;"
+        },
+        {
+            "code": "fa fa-italic",
+            "icons": "&#xf033;"
+        },
+        {
+            "code": "fa fa-joomla",
+            "icons": "&#xf1aa;"
+        },
+        {
+            "code": "fa fa-jpy",
+            "icons": "&#xf157;"
+        },
+        {
+            "code": "fa fa-jsfiddle",
+            "icons": "&#xf1cc;"
+        },
+        {
+            "code": "fa fa-key",
+            "icons": "&#xf084;"
+        },
+        {
+            "code": "fa fa-keyboard-o",
+            "icons": "&#xf11c;"
+        },
+        {
+            "code": "fa fa-krw",
+            "icons": "&#xf159;"
+        },
+        {
+            "code": "fa fa-language",
+            "icons": "&#xf1ab;"
+        },
+        {
+            "code": "fa fa-laptop",
+            "icons": "&#xf109;"
+        },
+        {
+            "code": "fa fa-lastfm",
+            "icons": "&#xf202;"
+        },
+        {
+            "code": "fa fa-lastfm-square",
+            "icons": "&#xf203;"
+        },
+        {
+            "code": "fa fa-leaf",
+            "icons": "&#xf06c;"
+        },
+        {
+            "code": "fa fa-leanpub",
+            "icons": "&#xf212;"
+        },
+        {
+            "code": "fa fa-legal",
+            "icons": "&#xf0e3;"
+        },
+        {
+            "code": "fa fa-lemon-o",
+            "icons": "&#xf094;"
+        },
+        {
+            "code": "fa fa-level-down",
+            "icons": "&#xf149;"
+        },
+        {
+            "code": "fa fa-level-up",
+            "icons": "&#xf148;"
+        },
+        {
+            "code": "fa fa-life-bouy",
+            "icons": "&#xf1cd;"
+        },
+        {
+            "code": "fa fa-life-buoy",
+            "icons": "&#xf1cd;"
+        },
+        {
+            "code": "fa fa-life-ring",
+            "icons": "&#xf1cd;"
+        },
+        {
+            "code": "fa fa-life-saver",
+            "icons": "&#xf1cd;"
+        },
+        {
+            "code": "fa fa-lightbulb-o",
+            "icons": "&#xf0eb;"
+        },
+        {
+            "code": "fa fa-line-chart",
+            "icons": "&#xf201;"
+        },
+        {
+            "code": "fa fa-link",
+            "icons": "&#xf0c1;"
+        },
+        {
+            "code": "fa fa-linkedin",
+            "icons": "&#xf0e1;"
+        },
+        {
+            "code": "fa fa-linkedin-square",
+            "icons": "&#xf08c;"
+        },
+        {
+            "code": "fa fa-linode",
+            "icons": "&#;xf2b8"
+        },
+        {
+            "code": "fa fa-linux",
+            "icons": "&#;xf17c"
+        },
+        {
+            "code": "fa fa-list",
+            "icons": "&#xf03a;"
+        },
+        {
+            "code": "fa fa-list-alt",
+            "icons": "&#xf022;"
+        },
+        {
+            "code": "fa fa-list-ol",
+            "icons": "&#xf0cb;"
+        },
+        {
+            "code": "fa fa-list-ul",
+            "icons": "&#xf0ca;"
+        },
+        {
+            "code": "fa fa-location-arrow",
+            "icons": "&#xf124;"
+        },
+        {
+            "code": "fa fa-lock",
+            "icons": "&#xf023;"
+        },
+        {
+            "code": "fa fa-long-arrow-down",
+            "icons": "&#xf175;"
+        },
+        {
+            "code": "fa fa-long-arrow-left",
+            "icons": "&#xf177;"
+        },
+        {
+            "code": "fa fa-long-arrow-right",
+            "icons": "&#xf178;"
+        },
+        {
+            "code": "fa fa-long-arrow-up",
+            "icons": "&#xf176;"
+        },
+        {
+            "code": "fa fa-low-vision",
+            "icons": "&#xf2a8;"
+        },
+        {
+            "code": "fa fa-magic",
+            "icons": "&#xf0d0;"
+        },
+        {
+            "code": "fa fa-magnet",
+            "icons": "&#xf076;"
+        },
+        {
+            "code": "fa fa-mail-forward",
+            "icons": "&#xf064;"
+        },
+        {
+            "code": "fa fa-mail-reply",
+            "icons": "&#xf112;"
+        },
+        {
+            "code": "fa fa-mail-reply-all",
+            "icons": "&#xf122;"
+        },
+        {
+            "code": "fa fa-male",
+            "icons": "&#xf183;"
+        },
+        {
+            "code": "fa fa-map",
+            "icons": "&#xf279;"
+        },
+        {
+            "code": "fa fa-map-marker",
+            "icons": "&#xf041;"
+        },
+        {
+            "code": "fa fa-map-o",
+            "icons": "&#xf278;"
+        },
+        {
+            "code": "fa fa-map-pin",
+            "icons": "&#xf276;"
+        },
+        {
+            "code": "fa fa-map-signs",
+            "icons": "&#xf277;"
+        },
+        {
+            "code": "fa fa-mars",
+            "icons": "&#xf222;"
+        },
+        {
+            "code": "fa fa-mars-double",
+            "icons": "&#xf227;"
+        },
+        {
+            "code": "fa fa-mars-stroke",
+            "icons": "&#xf229;"
+        },
+        {
+            "code": "fa fa-mars-stroke-h",
+            "icons": "&#xf22b;"
+        },
+        {
+            "code": "fa fa-mars-stroke-v",
+            "icons": "&#xf22a;"
+        },
+        {
+            "code": "fa fa-maxcdn",
+            "icons": "&#xf136;"
+        },
+        {
+            "code": "fa fa-meanpath",
+            "icons": "&#xf20c;"
+        },
+        {
+            "code": "fa fa-medium",
+            "icons": "&#xf23a;"
+        },
+        {
+            "code": "fa fa-medkit",
+            "icons": "&#xf0fa;"
+        },
+        {
+            "code": "fa fa-meetup",
+            "icons": "&#xf2e0;"
+        },
+        {
+            "code": "fa fa-meh-o",
+            "icons": "&#xf11a;"
+        },
+        {
+            "code": "fa fa-mercury",
+            "icons": "&#xf223;"
+        },
+        {
+            "code": "fa fa-microchip",
+            "icons": "&#xf2db;"
+        },
+        {
+            "code": "fa fa-microphone",
+            "icons": "&#xf130;"
+        },
+        {
+            "code": "fa fa-microphone-slash",
+            "icons": "&#xf131;"
+        },
+        {
+            "code": "fa fa-minus",
+            "icons": "&#xf068;"
+        },
+        {
+            "code": "fa fa-minus-circle",
+            "icons": "&#xf056;"
+        },
+        {
+            "code": "fa fa-minus-square",
+            "icons": "&#xf146;"
+        },
+        {
+            "code": "fa fa-minus-square-o",
+            "icons": "&#xf147;"
+        },
+        {
+            "code": "fa fa-mixcloud",
+            "icons": "&#xf289;"
+        },
+        {
+            "code": "fa fa-mobile",
+            "icons": "&#xf10b;"
+        },
+        {
+            "code": "fa fa-mobile-phone",
+            "icons": "&#xf10b;"
+        },
+        {
+            "code": "fa fa-modx",
+            "icons": "&#xf285;"
+        },
+        {
+            "code": "fa fa-money",
+            "icons": "&#xf0d6;"
+        },
+        {
+            "code": "fa fa-moon-o",
+            "icons": "&#xf186;"
+        },
+        {
+            "code": "fa fa-mortar-board",
+            "icons": "&#xf19d;"
+        },
+        {
+            "code": "fa fa-motorcycle",
+            "icons": "&#xf21c;"
+        },
+        {
+            "code": "fa fa-mouse-pointer",
+            "icons": "&#xf245;"
+        },
+        {
+            "code": "fa fa-music",
+            "icons": "&#xf001;"
+        },
+        {
+            "code": "fa fa-navicon",
+            "icons": "&#xf0c9;"
+        },
+        {
+            "code": "fa fa-neuter",
+            "icons": "&#xf22c;"
+        },
+        {
+            "code": "fa fa-newspaper-o",
+            "icons": "&#xf1ea;"
+        },
+        {
+            "code": "fa fa-object-group",
+            "icons": "&#xf247;"
+        },
+        {
+            "code": "fa fa-object-ungroup",
+            "icons": "&#xf248;"
+        },
+        {
+            "code": "fa fa-odnoklassniki",
+            "icons": "&#xf263;"
+        },
+        {
+            "code": "fa fa-odnoklassniki-square",
+            "icons": "&#xf264;"
+        },
+        {
+            "code": "fa fa-opencart",
+            "icons": "&#xf23d;"
+        },
+        {
+            "code": "fa fa-openid",
+            "icons": "&#xf19b;"
+        },
+        {
+            "code": "fa fa-opera",
+            "icons": "&#xf26a;"
+        },
+        {
+            "code": "fa fa-optin-monster",
+            "icons": "&#xf23c;"
+        },
+        {
+            "code": "fa fa-outdent",
+            "icons": "&#xf03b;"
+        },
+        {
+            "code": "fa fa-paint-brush",
+            "icons": "&#xf1fc;"
+        },
+        {
+            "code": "fa fa-pagelines",
+            "icons": "&#xf18c;"
+        },
+        {
+            "code": "fa fa-paper-plane",
+            "icons": "&#xf1d8;"
+        },
+        {
+            "code": "fa fa-paper-plane-o",
+            "icons": "&#xf1d9;"
+        },
+        {
+            "code": "fa fa-paperclip",
+            "icons": "&#xf0c6;"
+        },
+        {
+            "code": "fa fa-paragraph",
+            "icons": "&#xf1dd;"
+        },
+        {
+            "code": "fa fa-paste",
+            "icons": "&#xf0ea;"
+        },
+        {
+            "code": "fa fa-pause",
+            "icons": "&#xf04c;"
+        },
+        {
+            "code": "fa fa-pause-circle",
+            "icons": "&#xf28b;"
+        },
+        {
+            "code": "fa fa-pause-circle-o",
+            "icons": "&#xf28c;"
+        },
+        {
+            "code": "fa fa-paw",
+            "icons": "&#xf1b0;"
+        },
+        {
+            "code": "fa fa-paypal",
+            "icons": "&#xf1ed;"
+        },
+        {
+            "code": "fa fa-pencil",
+            "icons": "&#xf040;"
+        },
+        {
+            "code": "fa fa-pencil-square",
+            "icons": "&#xf14b;"
+        },
+        {
+            "code": "fa fa-pencil-square-o",
+            "icons": "&#xf044;"
+        },
+        {
+            "code": "fa fa-percent",
+            "icons": "&#xf295;"
+        },
+        {
+            "code": "fa fa-phone",
+            "icons": "&#xf095;"
+        },
+        {
+            "code": "fa fa-phone-square",
+            "icons": "&#xf098;"
+        },
+        {
+            "code": "fa fa-photo",
+            "icons": "&#xf03e;"
+        },
+        {
+            "code": "fa fa-picture-o",
+            "icons": "&#xf03e;"
+        },
+        {
+            "code": "fa fa-pie-chart",
+            "icons": "&#xf200;"
+        },
+        {
+            "code": "fa fa-pied-piper",
+            "icons": "&#xf2ae;"
+        },
+        {
+            "code": "fa fa-pied-piper-alt",
+            "icons": "&#xf1a8;"
+        },
+        {
+            "code": "fa fa-pied-piper-pp",
+            "icons": "&#xf1a7;"
+        },
+        {
+            "code": "fa fa-pinterest",
+            "icons": "&#xf0d2;"
+        },
+        {
+            "code": "fa fa-pinterest-p",
+            "icons": "&#xf231;"
+        },
+        {
+            "code": "fa fa-pinterest-square",
+            "icons": "&#xf0d3;"
+        },
+        {
+            "code": "fa fa-plane",
+            "icons": "&#xf072;"
+        },
+        {
+            "code": "fa fa-play",
+            "icons": "&#xf04b;"
+        },
+        {
+            "code": "fa fa-play-circle",
+            "icons": "&#xf144;"
+        },
+        {
+            "code": "fa fa-play-circle-o",
+            "icons": "&#xf01d;"
+        },
+        {
+            "code": "fa fa-plug",
+            "icons": "&#xf1e6;"
+        },
+        {
+            "code": "fa fa-plus",
+            "icons": "&#xf067;"
+        },
+        {
+            "code": "fa fa-plus-circle",
+            "icons": "&#xf055;"
+        },
+        {
+            "code": "fa fa-plus-square",
+            "icons": "&#xf0fe;"
+        },
+        {
+            "code": "fa fa-plus-square-o",
+            "icons": "&#xf196;"
+        },
+        {
+            "code": "fa fa-podcast",
+            "icons": "&#xf2ce;"
+        },
+        {
+            "code": "fa fa-power-off",
+            "icons": "&#xf011;"
+        },
+        {
+            "code": "fa fa-print",
+            "icons": "&#xf02f;"
+        },
+        {
+            "code": "fa fa-product-hunt",
+            "icons": "&#xf288;"
+        },
+        {
+            "code": "fa fa-puzzle-piece",
+            "icons": "&#xf12e;"
+        },
+        {
+            "code": "fa fa-qq",
+            "icons": "&#xf1d6;"
+        },
+        {
+            "code": "fa fa-qrcode",
+            "icons": "&#xf029;"
+        },
+        {
+            "code": "fa fa-question",
+            "icons": "&#xf128;"
+        },
+        {
+            "code": "fa fa-question-circle",
+            "icons": "&#xf059;"
+        },
+        {
+            "code": "fa fa-question-circle-o",
+            "icons": "&#xf29c;"
+        },
+        {
+            "code": "fa fa-quora",
+            "icons": "&#xf2c4;"
+        },
+        {
+            "code": "fa fa-quote-left",
+            "icons": "&#xf10d;"
+        },
+        {
+            "code": "fa fa-quote-right",
+            "icons": "&#xf10e;"
+        },
+        {
+            "code": "fa fa-ra",
+            "icons": "&#xf1d0;"
+        },
+        {
+            "code": "fa fa-random",
+            "icons": "&#xf074;"
+        },
+        {
+            "code": "fa fa-ravelry",
+            "icons": "&#xf2d9;"
+        },
+        {
+            "code": "fa fa-rebel",
+            "icons": "&#xf1d0;"
+        },
+        {
+            "code": "fa fa-recycle",
+            "icons": "&#xf1b8;"
+        },
+        {
+            "code": "fa fa-reddit",
+            "icons": "&#xf1a1;"
+        },
+        {
+            "code": "fa fa-reddit-alien",
+            "icons": "&#xf281;"
+        },
+        {
+            "code": "fa fa-reddit-square",
+            "icons": "&#xf1a2;"
+        },
+        {
+            "code": "fa fa-refresh",
+            "icons": "&#xf021;"
+        },
+        {
+            "code": "fa fa-registered",
+            "icons": "&#xf25d;"
+        },
+        {
+            "code": "fa fa-remove",
+            "icons": "&#xf00d;"
+        },
+        {
+            "code": "fa fa-renren",
+            "icons": "&#xf18b;"
+        },
+        {
+            "code": "fa fa-reorder",
+            "icons": "&#xf0c9;"
+        },
+        {
+            "code": "fa fa-repeat",
+            "icons": "&#xf01e;"
+        },
+        {
+            "code": "fa fa-reply",
+            "icons": "&#xf112;"
+        },
+        {
+            "code": "fa fa-reply-all",
+            "icons": "&#xf122;"
+        },
+        {
+            "code": "fa fa-resistance",
+            "icons": "&#xf1d0;"
+        },
+        {
+            "code": "fa fa-retweet",
+            "icons": "&#xf079;"
+        },
+        {
+            "code": "fa fa-rmb",
+            "icons": "&#xf157;"
+        },
+        {
+            "code": "fa fa-road",
+            "icons": "&#xf018;"
+        },
+        {
+            "code": "fa fa-rocket",
+            "icons": "&#xf135;"
+        },
+        {
+            "code": "fa fa-rotate-left",
+            "icons": "&#xf0e2;"
+        },
+        {
+            "code": "fa fa-rotate-right",
+            "icons": "&#xf01e;"
+        },
+        {
+            "code": "fa fa-rouble",
+            "icons": "&#xf158;"
+        },
+        {
+            "code": "fa fa-rss",
+            "icons": "&#xf09e;"
+        },
+        {
+            "code": "fa fa-rss-square",
+            "icons": "&#xf143;"
+        },
+        {
+            "code": "fa fa-rub",
+            "icons": "&#xf158;"
+        },
+        {
+            "code": "fa fa-ruble",
+            "icons": "&#xf158;"
+        },
+        {
+            "code": "fa fa-rupee",
+            "icons": "&#xf156;"
+        },
+        {
+            "code": "fa fa-s15",
+            "icons": "&#xf2cd;"
+        },
+        {
+            "code": "fa fa-safari",
+            "icons": "&#xf267;"
+        },
+        {
+            "code": "fa fa-save",
+            "icons": "&#xf0c7;"
+        },
+        {
+            "code": "fa fa-scissors",
+            "icons": "&#xf0c4;"
+        },
+        {
+            "code": "fa fa-scribd",
+            "icons": "&#xf28a;"
+        },
+        {
+            "code": "fa fa-search",
+            "icons": "&#xf002;"
+        },
+        {
+            "code": "fa fa-search-minus",
+            "icons": "&#xf010;"
+        },
+        {
+            "code": "fa fa-search-plus",
+            "icons": "&#xf00e;"
+        },
+        {
+            "code": "fa fa-sellsy",
+            "icons": "&#xf213;"
+        },
+        {
+            "code": "fa fa-send",
+            "icons": "&#xf1d8;"
+        },
+        {
+            "code": "fa fa-send-o",
+            "icons": "&#xf1d9;"
+        },
+        {
+            "code": "fa fa-server",
+            "icons": "&#xf233;"
+        },
+        {
+            "code": "fa fa-share",
+            "icons": "&#xf064;"
+        },
+        {
+            "code": "fa fa-share-alt",
+            "icons": "&#xf1e0;"
+        },
+        {
+            "code": "fa fa-share-alt-square",
+            "icons": "&#xf1e1;"
+        },
+        {
+            "code": "fa fa-share-square",
+            "icons": "&#xf14d;"
+        },
+        {
+            "code": "fa fa-share-square-o",
+            "icons": "&#xf045;"
+        },
+        {
+            "code": "fa fa-shekel",
+            "icons": "&#xf20b;"
+        },
+        {
+            "code": "fa fa-sheqel",
+            "icons": "&#xf20b;"
+        },
+        {
+            "code": "fa fa-shield",
+            "icons": "&#xf132;"
+        },
+        {
+            "code": "fa fa-ship",
+            "icons": "&#xf21a;"
+        },
+        {
+            "code": "fa fa-shirtsinbulk",
+            "icons": "&#xf214;"
+        },
+        {
+            "code": "fa fa-shopping-bag",
+            "icons": "&#xf290;"
+        },
+        {
+            "code": "fa fa-shopping-basket",
+            "icons": "&#xf291;"
+        },
+        {
+            "code": "fa fa-shopping-cart",
+            "icons": "&#xf07a;"
+        },
+        {
+            "code": "fa fa-shower",
+            "icons": "&#xf2cc;"
+        },
+        {
+            "code": "fa fa-sign-in",
+            "icons": "&#xf090;"
+        },
+        {
+            "code": "fa fa-sign-language",
+            "icons": "&#xf2a7;"
+        },
+        {
+            "code": "fa fa-sign-out",
+            "icons": "&#xf08b;"
+        },
+        {
+            "code": "fa fa-signal",
+            "icons": "&#xf012;"
+        },
+        {
+            "code": "fa fa-signing",
+            "icons": "&#xf2a7;"
+        },
+        {
+            "code": "fa fa-simplybuilt",
+            "icons": "&#xf215;"
+        },
+        {
+            "code": "fa fa-sitemap",
+            "icons": "&#xf0e8;"
+        },
+        {
+            "code": "fa fa-skyatlas",
+            "icons": "&#xf216;"
+        },
+        {
+            "code": "fa fa-skype",
+            "icons": "&#xf17e;"
+        },
+        {
+            "code": "fa fa-slack",
+            "icons": "&#xf198;"
+        },
+        {
+            "code": "fa fa-sliders",
+            "icons": "&#xf1de;"
+        },
+        {
+            "code": "fa fa-slideshare",
+            "icons": "&#xf1e7;"
+        },
+        {
+            "code": "fa fa-smile-o",
+            "icons": "&#xf118;"
+        },
+        {
+            "code": "fa fa-snapchat",
+            "icons": "&#xf2ab;"
+        },
+        {
+            "code": "fa fa-snapchat-ghost",
+            "icons": "&#xf2ac;"
+        },
+        {
+            "code": "fa fa-snapchat-square",
+            "icons": "&#xf2ad;"
+        },
+        {
+            "code": "fa fa-snowflake-o",
+            "icons": "&#xf2dc;"
+        },
+        {
+            "code": "fa fa-soccer-ball-o",
+            "icons": "&#xf1e3;"
+        },
+        {
+            "code": "fa fa-sort",
+            "icons": "&#xf0dc;"
+        },
+        {
+            "code": "fa fa-sort-alpha-asc",
+            "icons": "&#xf15d;"
+        },
+        {
+            "code": "fa fa-sort-alpha-desc",
+            "icons": "&#xf15e;"
+        },
+        {
+            "code": "fa fa-sort-amount-asc",
+            "icons": "&#xf160;"
+        },
+        {
+            "code": "fa fa-sort-amount-desc",
+            "icons": "&#xf161;"
+        },
+        {
+            "code": "fa fa-sort-asc",
+            "icons": "&#xf0de;"
+        },
+        {
+            "code": "fa fa-sort-desc",
+            "icons": "&#xf0dd;"
+        },
+        {
+            "code": "fa fa-sort-down",
+            "icons": "&#xf0dd;"
+        },
+        {
+            "code": "fa fa-sort-numeric-asc",
+            "icons": "&#xf162;"
+        },
+        {
+            "code": "fa fa-sort-numeric-desc",
+            "icons": "&#xf163;"
+        },
+        {
+            "code": "fa fa-sort-up",
+            "icons": "&#xf0de;"
+        },
+        {
+            "code": "fa fa-soundcloud",
+            "icons": "&#xf1be;"
+        },
+        {
+            "code": "fa fa-space-shuttle",
+            "icons": "&#xf197;"
+        },
+        {
+            "code": "fa fa-spinner",
+            "icons": "&#xf110;"
+        },
+        {
+            "code": "fa fa-spoon",
+            "icons": "&#xf1b1;"
+        },
+        {
+            "code": "fa fa-spotify",
+            "icons": "&#xf1bc;"
+        },
+        {
+            "code": "fa fa-square",
+            "icons": "&#xf0c8;"
+        },
+        {
+            "code": "fa fa-square-o",
+            "icons": "&#xf096;"
+        },
+        {
+            "code": "fa fa-stack-exchange",
+            "icons": "&#xf18d;"
+        },
+        {
+            "code": "fa fa-stack-overflow",
+            "icons": "&#xf16c;"
+        },
+        {
+            "code": "fa fa-star",
+            "icons": "&#xf005;"
+        },
+        {
+            "code": "fa fa-star-half",
+            "icons": "&#xf089;"
+        },
+        {
+            "code": "fa fa-star-half-empty",
+            "icons": "&#xf123;"
+        },
+        {
+            "code": "fa fa-star-half-full",
+            "icons": "&#xf123;"
+        },
+        {
+            "code": "fa fa-star-half-o",
+            "icons": "&#xf123;"
+        },
+        {
+            "code": "fa fa-star-o",
+            "icons": "&#xf006;"
+        },
+        {
+            "code": "fa fa-steam",
+            "icons": "&#xf1b6;"
+        },
+        {
+            "code": "fa fa-steam-square",
+            "icons": "&#xf1b7;"
+        },
+        {
+            "code": "fa fa-step-backward",
+            "icons": "&#xf048;"
+        },
+        {
+            "code": "fa fa-step-forward",
+            "icons": "&#xf051;"
+        },
+        {
+            "code": "fa fa-stethoscope",
+            "icons": "&#xf0f1;"
+        },
+        {
+            "code": "fa fa-sticky-note",
+            "icons": "&#xf249;"
+        },
+        {
+            "code": "fa fa-sticky-note-o",
+            "icons": "&#xf24a;"
+        },
+        {
+            "code": "fa fa-stop",
+            "icons": "&#xf04d;"
+        },
+        {
+            "code": "fa fa-stop-circle",
+            "icons": "&#xf28d;"
+        },
+        {
+            "code": "fa fa-stop-circle-o",
+            "icons": "&#xf28e;"
+        },
+        {
+            "code": "fa fa-street-view",
+            "icons": "&#xf21d;"
+        },
+        {
+            "code": "fa fa-strikethrough",
+            "icons": "&#xf0cc;"
+        },
+        {
+            "code": "fa fa-stumbleupon",
+            "icons": "&#xf1a4;"
+        },
+        {
+            "code": "fa fa-stumbleupon-circle",
+            "icons": "&#xf1a3;"
+        },
+        {
+            "code": "fa fa-subscript",
+            "icons": "&#xf12c;"
+        },
+        {
+            "code": "fa fa-subway",
+            "icons": "&#xf239;"
+        },
+        {
+            "code": "fa fa-suitcase",
+            "icons": "&#xf0f2;"
+        },
+        {
+            "code": "fa fa-sun-o",
+            "icons": "&#xf185;"
+        },
+        {
+            "code": "fa fa-superpowers",
+            "icons": "&#xf2dd;"
+        },
+        {
+            "code": "fa fa-superscript",
+            "icons": "&#xf12b;"
+        },
+        {
+            "code": "fa fa-support",
+            "icons": "&#xf1cd;"
+        },
+        {
+            "code": "fa fa-table",
+            "icons": "&#xf0ce;"
+        },
+        {
+            "code": "fa fa-tablet",
+            "icons": "&#xf10a;"
+        },
+        {
+            "code": "fa fa-tachometer",
+            "icons": "&#xf0e4;"
+        },
+        {
+            "code": "fa fa-tag",
+            "icons": "&#xf02b;"
+        },
+        {
+            "code": "fa fa-tags",
+            "icons": "&#xf02c;"
+        },
+        {
+            "code": "fa fa-tasks",
+            "icons": "&#xf0ae;"
+        },
+        {
+            "code": "fa fa-taxi",
+            "icons": "&#xf1ba;"
+        },
+        {
+            "code": "fa fa-telegram",
+            "icons": "&#xf2c6;"
+        },
+        {
+            "code": "fa fa-television",
+            "icons": "&#xf26c;"
+        },
+        {
+            "code": "fa fa-tencent-weibo",
+            "icons": "&#xf1d5;"
+        },
+        {
+            "code": "fa fa-terminal",
+            "icons": "&#xf120;"
+        },
+        {
+            "code": "fa fa-text-height",
+            "icons": "&#xf034;"
+        },
+        {
+            "code": "fa fa-text-width",
+            "icons": "&#xf035;"
+        },
+        {
+            "code": "fa fa-th",
+            "icons": "&#xf00a;"
+        },
+        {
+            "code": "fa fa-th-large",
+            "icons": "&#xf009;"
+        },
+        {
+            "code": "fa fa-th-list",
+            "icons": "&#xf00b;"
+        },
+        {
+            "code": "fa fa-themeisle",
+            "icons": "&#xf2b2;"
+        },
+        {
+            "code": "fa fa-thermometer",
+            "icons": "&#xf2c7;"
+        },
+        {
+            "code": "fa fa-thermometer-0",
+            "icons": "&#xf2cb;"
+        },
+        {
+            "code": "fa fa-thermometer-1",
+            "icons": "&#xf2ca;"
+        },
+        {
+            "code": "fa fa-thermometer-2",
+            "icons": "&#xf2c9;"
+        },
+        {
+            "code": "fa fa-thermometer-3",
+            "icons": "&#xf2c8;"
+        },
+        {
+            "code": "fa fa-thermometer-4",
+            "icons": "&#xf2c7;"
+        },
+        {
+            "code": "fa fa-thermometer-empty",
+            "icons": "&#xf2cb;"
+        },
+        {
+            "code": "fa fa-thermometer-full",
+            "icons": "&#xf2c7;"
+        },
+        {
+            "code": "fa fa-thermometer-half",
+            "icons": "&#xf2c9;"
+        },
+        {
+            "code": "fa fa-thermometer-quarter",
+            "icons": "&#xf2ca;"
+        },
+        {
+            "code": "fa fa-thermometer-three-quarters",
+            "icons": "&#xf2c8;"
+        },
+        {
+            "code": "fa fa-thumb-tack",
+            "icons": "&#xf08d;"
+        },
+        {
+            "code": "fa fa-thumbs-down",
+            "icons": "&#xf165;"
+        },
+        {
+            "code": "fa fa-thumbs-o-down",
+            "icons": "&#xf088;"
+        },
+        {
+            "code": "fa fa-thumbs-o-up",
+            "icons": "&#xf087;"
+        },
+        {
+            "code": "fa fa-thumbs-up",
+            "icons": "&#xf164;"
+        },
+        {
+            "code": "fa fa-ticket",
+            "icons": "&#xf145;"
+        },
+        {
+            "code": "fa fa-times",
+            "icons": "&#xf00d;"
+        },
+        {
+            "code": "fa fa-times-circle",
+            "icons": "&#xf057;"
+        },
+        {
+            "code": "fa fa-times-circle-o",
+            "icons": "&#xf05c;"
+        },
+        {
+            "code": "fa fa-times-rectangle",
+            "icons": "&#xf2d3;"
+        },
+        {
+            "code": "fa fa-times-rectangle-o",
+            "icons": "&#xf2d4;"
+        },
+        {
+            "code": "fa fa-tint",
+            "icons": "&#xf043;"
+        },
+        {
+            "code": "fa fa-toggle-down",
+            "icons": "&#xf150;"
+        },
+        {
+            "code": "fa fa-toggle-left",
+            "icons": "&#xf191;"
+        },
+        {
+            "code": "fa fa-toggle-off",
+            "icons": "&#xf204;"
+        },
+        {
+            "code": "fa fa-toggle-on",
+            "icons": "&#xf205;"
+        },
+        {
+            "code": "fa fa-toggle-right",
+            "icons": "&#xf152;"
+        },
+        {
+            "code": "fa fa-toggle-up",
+            "icons": "&#xf151;"
+        },
+        {
+            "code": "fa fa-trademark",
+            "icons": "&#xf25c;"
+        },
+        {
+            "code": "fa fa-train",
+            "icons": "&#xf238;"
+        },
+        {
+            "code": "fa fa-transgender",
+            "icons": "&#xf224;"
+        },
+        {
+            "code": "fa fa-transgender-alt",
+            "icons": "&#xf225;"
+        },
+        {
+            "code": "fa fa-trash",
+            "icons": "&#xf1f8;"
+        },
+        {
+            "code": "fa fa-trash-o",
+            "icons": "&#xf014;"
+        },
+        {
+            "code": "fa fa-tree",
+            "icons": "&#xf1bb;"
+        },
+        {
+            "code": "fa fa-trello",
+            "icons": "&#xf181;"
+        },
+        {
+            "code": "fa fa-tripadvisor",
+            "icons": "&#xf262;"
+        },
+        {
+            "code": "fa fa-trophy",
+            "icons": "&#xf091;"
+        },
+        {
+            "code": "fa fa-truck",
+            "icons": "&#xf0d1;"
+        },
+        {
+            "code": "fa fa-try",
+            "icons": "&#xf195;"
+        },
+        {
+            "code": "fa fa-tty",
+            "icons": "&#xf1e4;"
+        },
+        {
+            "code": "fa fa-tumblr",
+            "icons": "&#xf173;"
+        },
+        {
+            "code": "fa fa-tumblr-square",
+            "icons": "&#xf174;"
+        },
+        {
+            "code": "fa fa-turkish-lira",
+            "icons": "&#xf195;"
+        },
+        {
+            "code": "fa fa-tv",
+            "icons": "&#xf26c;"
+        },
+        {
+            "code": "fa fa-twitch",
+            "icons": "&#xf1e8;"
+        },
+        {
+            "code": "fa fa-twitter",
+            "icons": "&#xf099;"
+        },
+        {
+            "code": "fa fa-twitter-square",
+            "icons": "&#xf081;"
+        },
+        {
+            "code": "fa fa-umbrella",
+            "icons": "&#xf0e9;"
+        },
+        {
+            "code": "fa fa-underline",
+            "icons": "&#xf0cd;"
+        },
+        {
+            "code": "fa fa-undo",
+            "icons": "&#xf0e2;"
+        },
+        {
+            "code": "fa fa-universal-access",
+            "icons": "&#xf29a;"
+        },
+        {
+            "code": "fa fa-university",
+            "icons": "&#xf19c;"
+        },
+        {
+            "code": "fa fa-unlink",
+            "icons": "&#xf127;"
+        },
+        {
+            "code": "fa fa-unlock",
+            "icons": "&#xf09c;"
+        },
+        {
+            "code": "fa fa-unlock-alt",
+            "icons": "&#xf13e;"
+        },
+        {
+            "code": "fa fa-unsorted",
+            "icons": "&#xf0dc;"
+        },
+        {
+            "code": "fa fa-upload",
+            "icons": "&#xf093;"
+        },
+        {
+            "code": "fa fa-usb",
+            "icons": "&#xf287;"
+        },
+        {
+            "code": "fa fa-usd",
+            "icons": "&#xf155;"
+        },
+        {
+            "code": "fa fa-user",
+            "icons": "&#xf007;"
+        },
+        {
+            "code": "fa fa-user-circle",
+            "icons": "&#xf2bd;"
+        },
+        {
+            "code": "fa fa-user-circle-o",
+            "icons": "&#xf2be;"
+        },
+        {
+            "code": "fa fa-user-md",
+            "icons": "&#xf0f0;"
+        },
+        {
+            "code": "fa fa-user-o",
+            "icons": "&#xf2c0;"
+        },
+        {
+            "code": "fa fa-user-plus",
+            "icons": "&#xf234;"
+        },
+        {
+            "code": "fa fa-user-secret",
+            "icons": "&#xf21b;"
+        },
+        {
+            "code": "fa fa-user-times",
+            "icons": "&#xf235;"
+        },
+        {
+            "code": "fa fa-users",
+            "icons": "&#xf0c0;"
+        },
+        {
+            "code": "fa fa-vcard",
+            "icons": "&#xf2bb;"
+        },
+        {
+            "code": "fa fa-vcard-o",
+            "icons": "&#xf2bc;"
+        },
+        {
+            "code": "fa fa-venus",
+            "icons": "&#xf221;"
+        },
+        {
+            "code": "fa fa-venus-double",
+            "icons": "&#xf226;"
+        },
+        {
+            "code": "fa fa-venus-mars",
+            "icons": "&#xf228;"
+        },
+        {
+            "code": "fa fa-viacoin",
+            "icons": "&#xf237;"
+        },
+        {
+            "code": "fa fa-viadeo",
+            "icons": "&#xf2a9;"
+        },
+        {
+            "code": "fa fa-viadeo-square",
+            "icons": "&#xf2aa;"
+        },
+        {
+            "code": "fa fa-video-camera",
+            "icons": "&#xf03d;"
+        },
+        {
+            "code": "fa fa-vimeo",
+            "icons": "&#xf27d;"
+        },
+        {
+            "code": "fa fa-vimeo-square",
+            "icons": "&#xf194;"
+        },
+        {
+            "code": "fa fa-vine",
+            "icons": "&#xf1ca;"
+        },
+        {
+            "code": "fa fa-vk",
+            "icons": "&#xf189;"
+        },
+        {
+            "code": "fa fa-volume-control-phone",
+            "icons": "&#xf2a0;"
+        },
+        {
+            "code": "fa fa-volume-down",
+            "icons": "&#xf027;"
+        },
+        {
+            "code": "fa fa-volume-off",
+            "icons": "&#xf026;"
+        },
+        {
+            "code": "fa fa-volume-up",
+            "icons": "&#xf028;"
+        },
+        {
+            "code": "fa fa-warning",
+            "icons": "&#xf071;"
+        },
+        {
+            "code": "fa fa-wechat",
+            "icons": "&#xf1d7;"
+        },
+        {
+            "code": "fa fa-weibo",
+            "icons": "&#xf18a;"
+        },
+        {
+            "code": "fa fa-weixin",
+            "icons": "&#xf1d7;"
+        },
+        {
+            "code": "fa fa-whatsapp",
+            "icons": "&#xf232;"
+        },
+        {
+            "code": "fa fa-wheelchair",
+            "icons": "&#xf193;"
+        },
+        {
+            "code": "fa fa-wheelchair-alt",
+            "icons": "&#xf29b;"
+        },
+        {
+            "code": "fa fa-wifi",
+            "icons": "&#xf1eb;"
+        },
+        {
+            "code": "fa fa-wikipedia-w",
+            "icons": "&#xf266;"
+        },
+        {
+            "code": "fa fa-window-close",
+            "icons": "&#xf2d3;"
+        },
+        {
+            "code": "fa fa-window-close-o",
+            "icons": "&#xf2d4;"
+        },
+        {
+            "code": "fa fa-window-maximize",
+            "icons": "&#xf2d0;"
+        },
+        {
+            "code": "fa fa-window-minimize",
+            "icons": "&#xf2d1;"
+        },
+        {
+            "code": "fa fa-window-restore",
+            "icons": "&#xf2d2;"
+        },
+        {
+            "code": "fa fa-windows",
+            "icons": "&#xf17a;"
+        },
+        {
+            "code": "fa fa-won",
+            "icons": "&#xf159;"
+        },
+        {
+            "code": "fa fa-wordpress",
+            "icons": "&#xf19a;"
+        },
+        {
+            "code": "fa fa-wpbeginner",
+            "icons": "&#xf297;"
+        },
+        {
+            "code": "fa fa-wpexplorer",
+            "icons": "&#xf2de;"
+        },
+        {
+            "code": "fa fa-wpforms",
+            "icons": "&#xf298;"
+        },
+        {
+            "code": "fa fa-wrench",
+            "icons": "&#xf0ad;"
+        },
+        {
+            "code": "fa fa-xing",
+            "icons": "&#xf168;"
+        },
+        {
+            "code": "fa fa-xing-square",
+            "icons": "&#xf169;"
+        },
+        {
+            "code": "fa fa-y-combinator",
+            "icons": "&#xf23b;"
+        },
+        {
+            "code": "fa fa-y-combinator-square",
+            "icons": "&#xf1d4;"
+        },
+        {
+            "code": "fa fa-yahoo",
+            "icons": "&#xf19e;"
+        },
+        {
+            "code": "fa fa-yc",
+            "icons": "&#xf23b;"
+        },
+        {
+            "code": "fa fa-yc-square",
+            "icons": "&#xf1d4;"
+        },
+        {
+            "code": "fa fa-yelp",
+            "icons": "&#xf1e9;"
+        },
+        {
+            "code": "fa fa-yen",
+            "icons": "&#xf157;"
+        },
+        {
+            "code": "fa fa-yoast",
+            "icons": "&#xf2b1;"
+        },
+        {
+            "code": "fa fa-youtube",
+            "icons": "&#xf167;"
+        },
+        {
+            "code": "fa fa-youtube-play",
+            "icons": "&#xf16a;"
+        },
+        {
+            "code": "fa fa-youtube-square",
+            "icons": "&#xf166;"
+        }
+    ]

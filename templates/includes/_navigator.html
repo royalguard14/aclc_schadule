@@ -1,0 +1,35 @@
+{% if session['emptynav']|length > 0 %}
+{% for xx in session['emptynav']%}
+<li class="nav-item">
+  <a href="{{ url_for(xx[0]['routeUri'])}}" class="nav-link">
+    <i class="nav-icon fa {{xx[0]['icon']}}"></i>
+    <p>
+      {{xx[0]['module']}}
+    </p>
+  </a>
+</li>
+{% endfor %}
+{% endif %}
+{% if session['adminnav']|length > 0 %}
+<!-- Admin Tools -->
+<li class="nav-item">
+  <a href="#" class="nav-link">
+    <i class="nav-icon fa fa-user-secret"></i>
+    <p>
+      Developer Tools
+      <!-- add department,  -->
+      <i class="fas fa-angle-left right"></i>
+    </p>
+  </a>
+  <ul class="nav nav-treeview">
+    {% for xx in session['adminnav']%}
+    <li class="nav-item">
+      <a href="{{ url_for(xx[0]['routeUri'])}}" class="nav-link">
+        <i class="far fa-circle nav-icon"></i>
+        <p>{{xx[0]['module']}}</p>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</li>
+{% endif %}

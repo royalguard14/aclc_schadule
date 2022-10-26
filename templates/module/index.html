@@ -1,0 +1,291 @@
+{% extends "layouts/master.html" %}
+{% block crump1 %}MODULES{% endblock %}
+{% block crump2 %}Module{% endblock %}
+{% block head %} 
+{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Add New Module   </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <form id="addForm">
+          <div class="row clearfix">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Module</label>  
+                  <input type="text" name="module" class="form-control" placeholder="Enter Name of Module" id="mods" required>                                                             
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Icon</label>  
+                  <select name="icon" class="form-control select2-icon " placeholder="Select Icon of the Module" id="icons">
+                    <option value="none" >Select Icon of the Module</option>
+                    {% for x in fawsome%}
+                    <option value="{{x['code']}}" >{{x['code']}}</option>
+                    {% endfor %}
+                  </select>                     
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mod">Descripiton</label>   
+            <textarea class="form-control" id="desc" name="description" style="resize: none; height: 10em;" placeholder="Enter Module Descripiton"></textarea>                    
+          </div>  
+          <div class="row clearfix">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Route Name</label> 
+                  <input type="text" name="routeUri" class="form-control" placeholder="Enter Name of Route" id="ruri" required>                       
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Default Url</label>  
+                  <input type="text" name="default_url" class="form-control" placeholder="Enter Default Url" id="durl" required>                                                                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer float-right">
+        <input type="hidden" name="id" id="ids">
+        <button type="submit" class="btn btn-primary float-right" id="save-button"><i class=" archive"></i> Submit</button>
+      </div>
+      <!-- /.card -->
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Module List </h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="excel_table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Module</th>
+              <th>Description</th>
+              <th>Route</th>
+              <th>Default Url</th>
+              <th>Icon</th>
+              <th>Action</th> 
+            </tr>
+          </thead>
+          <tbody id="load-table">
+            {% for x in modules %}
+            <tr>
+              <td>{{x['id']}}</td>
+              <td>{{x['module']}}</td>
+              <td>{{x['description']}}</td>
+              <td>{{x['routeUri']}}</td>
+              <td>{{x['default_url']}}</td>
+              <td>{{x['icon']}}</td>
+              <td>
+                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id ="edit" data-id="{{x['id']}}" data-mods="{{x['module']}}" data-icons="{{x['icon']}}" data-desc="{{x['description']}}" data-ruri="{{x['routeUri']}}" data-durl="{{x['default_url']}}"><i class="fa fa-pencil"></i> Edit</a></div>
+                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs"  id="delete" data-id="{{x['id']}}" ><i class="fa fa-trash"></i> delete</a></div>
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="modal-sm">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">EDIT Modules</h4>
+        <input type="text" name="sid" id="edit-id" hidden="">
+      </div>
+      <div class="modal-body">
+        <form action="" id="edit-form">
+          <div class="row clearfix">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Module</label>  
+                  <input type="text" name="module" class="form-control" placeholder="Enter Name of Module" id="e_mods" required>                                                             
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Icon</label>  
+                  <input type="text" name="sid" id="e_icons" hidden="">
+                  <select name="icon" class="form-control select2bs4" placeholder="Select Icon of the Module" id="e_iconss" readonly>
+                  </select>                     
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="mod">Descripiton</label>   
+            <textarea class="form-control" id="e_desc" name="description" style="resize: none; height: 10em;" placeholder="Enter Module Descripiton">
+            </textarea>                    
+          </div>  
+          <div class="row clearfix">
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Route Name</label> 
+                  <input type="text" name="routeUri" class="form-control" placeholder="Enter Name of Route" id="e_ruri" required>                       
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <div class="form-line">
+                  <label for="mod">Default Url</label>  
+                  <input type="text" name="default_url" class="form-control" placeholder="Enter Default Url" id="e_durl" required>                                                                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="edit-submit">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+{% endblock %}
+{% block script %}
+<script>
+  // Insert data---------------------------------------------
+  $(document).on("click", "#save-button", function(e){
+    e.preventDefault();
+    var module_name = $('#mods').val();
+    var module_icon = $('#icons').val();
+    var module_description = $('#desc').val();
+    var module_url = $('#ruri').val();
+    var module_durl = $('#durl').val();
+    if ( module_name == "" || module_icon == "" || module_description == "" || module_url == "" || module_durl == "") {
+      switalert('warning', 'All fields are required !');
+    }
+    else{
+      $.ajax({
+        url : "{{ url_for('modules.module_store')}}",
+        type : "POST",
+        data : JSON.stringify({module_name : module_name, module_icon : module_icon, module_description : module_description, module_url : module_url, module_durl : module_durl}),
+        dataType : "json",
+        contentType : "application/json; charset=utf-8",
+        success : function(data){
+          if (data == 1) {
+            $('#addForm').trigger("reset");
+            stoast('Data has been Saved  !', 'success');
+          }else{
+            switalert('error', "Can't Save Record.");
+          }
+        }
+      });
+    }
+  });
+  // delete data---------------------------------------------
+  $(document).on("click","#delete", function(e){
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        var id = $(this).data("id");
+        $.ajax({
+          url : "{{ url_for('modules.module_destroy')}}",
+          type : "POST",
+          data : JSON.stringify({id : id}),
+          dataType : "json",
+          contentType : "application/json; charset=utf-8",
+          success : function(data){
+            if (data == 1){
+              Swal.fire(
+                'Deleted!',
+                'Your file has been deleted.',
+                'success'
+                )
+            }else{
+              switalert('error', "Can't Delete Record.");
+            }
+          }
+        });
+      }
+    })
+  });
+  // update data---------------------------------------------
+  $(document).on("click","#edit", function(e){
+    $('#modal-sm').modal('toggle');
+    var id = $(this).data("id");
+    var module_name = $(this).data("mods");
+    var module_icon = $(this).data("icons");
+    var module_description = $(this).data("desc");
+    var module_url = $(this).data("ruri");
+    var module_durl = $(this).data("durl");
+    $('#edit-id').val(id);
+    $('#e_mods').val(module_name);
+    $('#e_icons').val(module_icon);
+    $('#e_desc').val(module_description);
+    $('#e_ruri').val(module_url);
+    $('#e_durl').val(module_durl);
+  });
+  //Update Record------------------------------------------
+  $(document).on("click", "#edit-submit", function(e){
+    e.preventDefault();
+    var id =  $('#edit-id').val();
+    var module_name = $('#e_mods').val();
+    var module_icon = $('#e_icons').val();
+    var module_description = $('#e_desc').val();
+    var module_url = $('#e_ruri').val();
+    var module_durl = $('#e_durl').val();
+    if ( module_name == "" || module_icon == "" || module_description == "" || module_url == "" || module_durl == "") {
+      switalert('warning', 'All fields are required !');
+    }
+    else {
+      $.ajax({
+        url : "{{ url_for('modules.module_update')}}",
+        type : "POST",
+        data : JSON.stringify({id : id, module_name : module_name, module_icon : module_icon, module_description : module_description, module_url : module_url, module_durl : module_durl}),
+        dataType : "json",
+        contentType : "application/json; charset=utf-8",
+        success : function(data){
+          if (data == 1) {
+            $('#modal-sm').modal('hide');
+            stoast('Data has been Saved  !', 'success');
+          }else{
+            switalert('error', "Can't Save Record.");
+          }
+        }
+      });
+    }
+  });
+</script>
+{% endblock %}

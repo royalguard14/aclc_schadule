@@ -1,0 +1,280 @@
+{% extends "layouts/master.html" %}
+{% block crump1 %}ACTION{% endblock %}
+{% block crump2 %}Action{% endblock %}
+
+
+
+
+{% block content %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Add New Function</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <form id="addForm">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="funtion">Function Name</label>
+              <input type="text" name="func_name" id="func_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="func_desc">Description</label>
+              <textarea class="form-control" id="func_desc" name="func_desc" style="resize: none; height: 10em;">
+              </textarea>
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <button type="submit" class="btn btn-primary float-right" id="save-button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col-md-6 -->
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Function List</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <table id="department_table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Function</th>
+              <th>Description</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="load-table">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col-md-6 -->
+</div>
+<!-- /.row -->
+<!-- Modal -->
+<div class="modal fade" id="modal-sm">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">EDIT FUNCTION</h4>
+      </div>
+      <div class="modal-body">
+        <form action="" id="edit-form">
+            <div class="form-group">
+                <label for="funtion">Function Name</label>
+                <input type="text" name="efunc_name" id="efunc_name" class="form-control" required>
+                <input type="text" name="sid" id="edit-id" hidden="">
+              </div>
+              <div class="form-group">
+                <label for="func_desc">Description</label>
+                <textarea class="form-control" id="efunc_desc" name="efunc_desc" style="resize: none; height: 10em;">
+                </textarea>
+              </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="edit-submit">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+{% endblock %}
+
+{% block script %}
+<script>
+  $(function () {
+    $("#department_table").DataTable({
+      "responsive": true, 
+      "lengthChange": false, 
+      "autoWidth": false,
+      "paging": true,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).container().appendTo('#department_table_wrapper .col-md-6:eq(0)');
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    // Toast ---------------------------------------------
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 3000
+    });
+    
+    function stoast(msg,status){
+      Toast.fire({
+        icon: status,
+        text: msg,
+      })
+    }
+    
+    function switalert(icon,title){
+      Swal.fire({
+        icon: icon,
+        title: title,
+        timer: 1500,
+        showConfirmButton: false,
+      })
+    }
+    
+    // load data---------------------------------------------
+    function load_department(){
+      $("#load-table").html('');
+      var count = 0
+      $.ajax({
+        url : "{{ url_for('actions.load_act')}}",
+        type : "GET",
+        success : function(data){
+          $.each(data, function(key, value){ 
+            var inc = ++count
+
+            if(value[2] == undefined ){
+              var Descri = '-=No Description=-'
+            }else{
+              var Descri = value[2]
+            }
+            
+            $("#load-table").append(
+            '<tr>'+  
+              '<td>'+ inc+'</td>'+
+              '<td>'+ value[1] +'</td>'+
+              '<td>'+ Descri +'</td>'+
+              '<td>'+
+                '<div class="btn-group">'+'<a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id = "edit" data-id="'+value[0]+'" data-func="'+value[1]+'" data-desc="'+value[2]+'"><i class="fa fa-pencil"></i> Edit</a>'+'</div>'+
+                '<div class="btn-group">'+'<a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs" id = "delete" data-id="'+value[0]+'" ><i class="fa fa-trash"></i> Edit</a>'+'</div>'+
+                '</td>'+
+                '</tr>'
+                );
+              });
+            }
+          });
+        }
+
+        load_department();
+        
+        // insert data---------------------------------------------
+        $('#save-button').on("click",function(e){
+          e.preventDefault();
+          var func_name = $('#func_name').val();
+          var func_desc = $('#func_desc').val();
+          if ( func_name == "" || func_desc == "") {
+            switalert('warning', 'All fields are required !');
+          }
+          else{
+            $.ajax({
+              url : "{{ url_for('actions.add_act')}}",
+              type : "POST",
+              data : JSON.stringify({func_name : func_name, func_desc : func_desc}),
+              dataType : "json",
+              contentType : "application/json; charset=utf-8",
+              success : function(data){
+                if (data == 1) {
+                  load_department();
+                  $('#addForm').trigger("reset");
+                  stoast('Data has been Saved  !', 'success');
+                }else{
+                  switalert('error', "Can't Save Record.");
+                }
+              }
+            });
+          }
+        });
+        // delete data---------------------------------------------
+        $(document).on("click","#delete", function(e){
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              var department_id = $(this).data("id");
+              $.ajax({
+                url : "{{ url_for('actions.del_act')}}",
+                type : "POST",
+                data : JSON.stringify({id : department_id}),
+                dataType : "json",
+                contentType : "application/json; charset=utf-8",
+                success : function(data){
+                  if (data == 1){
+                    load_department();
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                  }else{
+                    switalert('error', "Can't Delete Record.");
+                  }
+                }
+              });
+            }
+          })
+        });
+        // update data---------------------------------------------
+        $(document).on("click","#edit", function(e){
+          $('#modal-sm').modal('toggle');
+          var id = $(this).data("id");
+          var func_name = $(this).data("func");
+          var func_desc = $(this).data("desc");
+          $('#edit-id').val(id);
+          $('#efunc_name').val(func_name);
+          $('#efunc_desc').val(func_desc);
+        });
+        
+        //Update Record------------------------------------------
+        $(document).on("click", "#edit-submit", function(e){
+          e.preventDefault();
+          var id =  $('#edit-id').val();
+          var func_name = $('#efunc_name').val();
+          var func_desc = $('#efunc_desc').val();
+          if (func_name == "") {
+            switalert('warning', 'All fields are required !');
+          }else {
+            $.ajax({
+              url : "{{ url_for('actions.upd_act')}}",
+              type : "POST",
+              data : JSON.stringify({id : id, func_name : func_name, func_desc : func_desc}),
+              dataType : "json",
+              contentType : "application/json; charset=utf-8",
+              success : function(data){
+                if (data == 1) {
+                    load_department();
+                  $('#modal-sm').modal('hide');
+                  stoast('Data has been Saved  !', 'success');
+                }else{
+                  switalert('error', "Can't Save Record.");
+                }
+              }
+            });
+          }
+        });
+      });
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+<script src="js/globaldatatables.min.js"></script>
+    {% endblock %}

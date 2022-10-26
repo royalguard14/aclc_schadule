@@ -1,0 +1,125 @@
+{% extends "layouts/master.html" %}
+
+{% block test %} 
+
+{{ url_for(request.endpoint) }}
+{{session['role'] }}
+
+
+{% endblock %}
+
+
+
+{% block content %}
+          <!-- Small boxes (Stat box) -->
+          <div class="row">
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-info">
+                <div class="inner">
+                  <h3 id = "dept_count"></h3>
+                  <p>Departments</p>
+
+                </div>
+                <div class="icon">
+                  <i class="fa fa-building"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-success">
+                <div class="inner">
+                  <h3 id = "course_count"></h3>
+                  <p>Courses</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-folder-closed"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-warning">
+                <div class="inner">
+                  <h3 id = "subj_count"></h3>
+  
+                  <p>Subjects</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-lightbulb"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+            <div class="col-lg-3 col-6">
+              <!-- small box -->
+              <div class="small-box bg-danger">
+                <div class="inner">
+                  <h3 id = "users_count"></h3>
+                  <p>Users</p>
+                </div>
+                <div class="icon">
+                  <i class="fa fa-users"></i>
+                </div>
+              </div>
+            </div>
+            <!-- ./col -->
+          </div>
+          <!-- /.row -->
+
+{% endblock %}
+
+{% block script %}
+<script>
+    function countdepartment(){
+      $.ajax({
+        url : "{{ url_for('dashboards.dept_count')}}",
+        type : "GET",
+        success : function(data){
+          $("#dept_count").html(data);
+        }
+      });
+    }
+
+    function countcourse(){
+      $.ajax({
+        url : "{{ url_for('dashboards.course_count')}}",
+        type : "GET",
+        success : function(data){
+          $("#course_count").html(data);
+        }
+      });
+    }
+
+    function countsubject(){
+      $.ajax({
+        url : "{{ url_for('dashboards.subj_count')}}",
+        type : "GET",
+        success : function(data){
+          $("#subj_count").html(data);
+        }
+      });
+    }
+
+    function countusers(){
+      $.ajax({
+        url : "{{ url_for('dashboards.users_count')}}",
+        type : "GET",
+        success : function(data){
+          $("#users_count").html(data);
+        }
+      });
+    }
+   
+  </script>
+<script>
+  countdepartment()
+  countcourse()
+  countsubject()
+  countusers()
+</script>
+
+{% endblock %}

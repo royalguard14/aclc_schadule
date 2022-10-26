@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ACLC - BXU Login</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='/auth_asset/style.css')}}">
+
+</head>
+<body>
+  {% include "./includes/_notif.html" %}
+<div class="login-box">
+  <h2>Login</h2>
+  <form action="{{ url_for('auth.login')}}" method="post" id="formlogin">
+    <div class="user-box">
+      <input type="text" name="username" id="myInput1" required>
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="password" id="myInput2" required>
+      <label>Password</label>
+    </div>
+
+
+    
+    <a id="subbot">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+    
+  </form>
+</div>
+<!-- partial -->
+  
+<script >
+
+document.getElementById("subbot").onclick = function() {
+    document.getElementById("formlogin").submit();
+}
+
+var input1 = document.getElementById("myInput1");
+var input2 = document.getElementById("myInput2");
+input1.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("subbot").click();
+  }
+});
+
+input2.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("subbot").click();
+  }
+});
+
+
+</script>
+
+
+</body>
+</html>
