@@ -11,7 +11,6 @@ class Role(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     group = db.Column(db.String(50))
     modules = db.Column(db.String(300))
-    action = db.Column(db.String(500))
     log = db.Column(db.String(100000))
     created_at = db.Column(DateTime, default=datetime.now)
     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
@@ -21,7 +20,6 @@ class Role(db.Model):
             'id': self.id,
             'group': self.group,
             'modules': self.modules,
-            'action': self.action,
             'log': self.log,
         }
         
@@ -49,22 +47,8 @@ class Module(db.Model):
             'encryptname': self.encryptname
         }
 
-#===================================================
 
-class Action(db.Model):
-    __tablename__ = 'actions'
-    id = db.Column(db.Integer, primary_key=True)
-    function = db.Column(db.String(50))
-    description = db.Column(db.String(1500))
-    created_at = db.Column(DateTime, default=datetime.now)
-    updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    @property
-    def serialize(self):
-        return {
-            'id': self.id,
-            'function': self.function,
-            'description': self.description,
-        }
+
 
 #===================================================
 class User(db.Model):

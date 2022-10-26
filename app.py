@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
 from models.Models import db
-from routes.web import auth,dashboards,settings,modules,departments,courses,subjects,schedules,instructors,students,admins,actions,users,ipaccess
+from routes.web import auth,dashboards,settings,modules,departments,courses,subjects,schedules,instructors,students,admins,users,ipaccess
 
 app = Flask(__name__)
 app.config.from_object('config')
@@ -20,7 +20,6 @@ app.register_blueprint(schedules, url_prefix='/schedule')
 app.register_blueprint(instructors, url_prefix='/instructor')
 app.register_blueprint(students, url_prefix='/student')
 app.register_blueprint(admins, url_prefix='/admin')
-app.register_blueprint(actions, url_prefix='/action')
 app.register_blueprint(users, url_prefix='/user')
 app.register_blueprint(ipaccess, url_prefix='/ip')
 

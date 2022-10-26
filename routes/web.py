@@ -3,7 +3,6 @@ from flask import Blueprint
 '''
 CONTROLLERS
 '''
-from controllers.ActionController import *
 from controllers.AuthController import *
 from controllers.CourseController import *
 from controllers.DashboardController import *
@@ -31,7 +30,6 @@ schedules = Blueprint('schedules', __name__)
 instructors = Blueprint('instructors', __name__)
 students = Blueprint('students', __name__)
 admins = Blueprint('admins', __name__)
-actions = Blueprint('actions', __name__)
 users = Blueprint('users', __name__)
 ipaccess = Blueprint('ipaccess', __name__)
 
@@ -114,11 +112,7 @@ admins.route('/create', methods=['POST'])(admin_store)
 admins.route('/edit', methods=['POST'])(admin_update)
 admins.route('/delete', methods=['POST'])(admin_destroy)
 
-#Action
-actions.route('/', methods=['GET'])(action_index)
-actions.route('/create', methods=['POST'])(action_store)
-actions.route('/edit', methods=['POST'])(action_update)
-actions.route('/delete', methods=['POST'])(action_destroy)
+
 
 #User
 users.route('/', methods=['GET'])(user_index)
