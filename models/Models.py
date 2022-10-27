@@ -2,7 +2,6 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy import DateTime
 
-
 db = SQLAlchemy()
 
 #===================================================
@@ -29,7 +28,7 @@ class Module(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     module = db.Column(db.String(50))
     description = db.Column(db.String(1500))
-    routeUri = db.Column(db.String(25))
+    routeUri = db.Column(db.String(50))
     icon = db.Column(db.String(50))
     default_url = db.Column(db.String(50))
     encryptname = db.Column(db.String(500))
@@ -212,7 +211,4 @@ class SchoolR(db.Model):
             'year': self.year,
             'study_load': self.study_load,
         }
-
-
-
 
