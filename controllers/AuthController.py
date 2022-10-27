@@ -11,7 +11,7 @@ load_dotenv()
 
 
 emptynavs = [6,7,8,9,10,11]
-adminnavs = [1,2,3,4,5,12]
+adminnavs = [1,3,4,5,12]
 
 role_schema = RoleSchema()
 module_schema = ModulesSchema()
