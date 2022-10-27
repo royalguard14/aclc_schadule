@@ -2,22 +2,14 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>ERROR</title>
+  <title>ERROR - {{code}}</title>
   <link href="{{ url_for('static',filename='/errors/style.css')}}" rel="stylesheet">
-
-
 </head>
 <body>
-
     <section class="wrapper">
-
         <div class="container">
-
             <div id="scene" class="scene" data-hover-only="false">
-
-
                 <div class="circle" data-depth="1.2"></div>
-
                 <div class="one" data-depth="0.9">
                     <div class="content">
                         <span class="piece"></span>
@@ -25,7 +17,6 @@
                         <span class="piece"></span>
                     </div>
                 </div>
-
                 <div class="two" data-depth="0.60">
                     <div class="content">
                         <span class="piece"></span>
@@ -33,7 +24,6 @@
                         <span class="piece"></span>
                     </div>
                 </div>
-
                 <div class="three" data-depth="0.40">
                     <div class="content">
                         <span class="piece"></span>
@@ -41,30 +31,28 @@
                         <span class="piece"></span>
                     </div>
                 </div>
-
                 <p class="p404" data-depth="0.50">{{code}}</p>
                 <p class="p404" data-depth="0.10">{{code}}</p>
-
             </div>
-
             <div class="text">
                 <article>
-                    <p>{{desc}}. <br>Go back to the homepage if you dare!</p>
-                    <button id="backs">i dare!</button>
+                    <h1>{{desc}}</h1>
+                    {% if bacs != None %}
+                    <button id="backs" data-url = "{{bacs}}">FIX!!!</button>
+                    {% endif %}
                 </article>
             </div>
-
         </div>
     </section>
-<!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-<script  src="{{ url_for('static',filename='/errors/script.js')}}"></script>
-<script>
-	document.getElementById("backs").onclick = function() {
-		alert('asa')
-	}
-</script>
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="{{ url_for('static',filename='/errors/script.js')}}"></script>
+    <script>
+        document.getElementById("backs").onclick = function() {
+            var x = $(this).data("url");
+            window.location.replace(x);
+        }
+    </script>
 </body>
 </html>

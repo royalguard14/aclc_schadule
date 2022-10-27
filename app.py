@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template,session
 from flask_migrate import Migrate
 from models.Models import db
 from routes.web import auth,dashboards,settings,modules,departments,courses,subjects,schedules,instructors,students,admins,users,ipaccess
@@ -36,43 +36,59 @@ def index():
 def error_401(e):
     code_no = '401'
     code_d = 'Unauthorized Access'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    if 'logged_in' in session:
+        balik = '/dashboard/'
+    else:
+        balik = '/login'
+
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(403)
 def error_403(e):
     code_no = '403'
     code_d = 'Access Forbidden'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    if 'logged_in' in session:
+        balik = '/dashboard/'
+    else:
+        balik = '/login'
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(404)
 def error_404(e):
     code_no = '404'
     code_d = 'Invalid Page'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    if 'logged_in' in session:
+        balik = '/dashboard/'
+    else:
+        balik = '/login'
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(500)
 def error_500(e):
     code_no = '500'
     code_d = 'Server Error'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    balik = None
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(502)
 def error_502(e):
     code_no = '502'
     code_d = 'Bad Gateway'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    balik = None
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(503)
 def error_503(e):
     code_no = '503'
     code_d = 'Service Unavailable'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    balik = None
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 
 @app.errorhandler(504)
 def error_504(e):
     code_no = '504'
     code_d = 'Getway Timeout'
-    return render_template('errors/main.html',code=code_no, desc = code_d)
+    return render_template('errors/main.html',code=code_no, desc = code_d,bacs = balik)
 ####################################################
 
 

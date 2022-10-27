@@ -31,8 +31,10 @@ def users_count():
     return custom_response(data, 200)
     
 def student_count():
-    ...
+    data = User.query.filter_by(access='student').count()
+    return custom_response(data, 200)
 
 def instructor_count():
-    ...
+    data = User.query.filter_by(access='instructor').count()
+    return custom_response(data, 200)
     
