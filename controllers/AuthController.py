@@ -10,8 +10,8 @@ db = SQLAlchemy()
 load_dotenv()
 
 
-emptynavs = [6,7,8,9,10,11]
-adminnavs = [1,3,4,5,12]
+emptynavs = [5,6,7,8,9,10]
+adminnavs = [1,2,3,4,11]
 
 role_schema = RoleSchema()
 module_schema = ModulesSchema()
@@ -26,15 +26,7 @@ def login():
         if request.method == 'POST':
             usernamePost = request.form.get('username')
             passwordPost = request.form.get('password')
-            
-            print('======================================================')
-            
-
             user = User.query.filter_by(username=usernamePost).first()
-            #user = User.query.all()
-            print('Result ============>',user.password)
-            
-        
             if user:
                 if check_password_hash(user.password, passwordPost):
                     session['logged_in'] = True

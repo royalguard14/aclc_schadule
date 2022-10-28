@@ -38,7 +38,7 @@
         </div>
       </div>
       <div class="card-body">
-        <table id="department_table" class="table table-bordered table-striped">
+        <table id="excel_table" class="table table-bordered table-striped ">
           <thead>
             <tr>
               <th>#</th>
@@ -47,10 +47,20 @@
               <th>Action</th>
             </tr>
           </thead>
-          
           <tbody id="load-table">
-            
+            {% for x in dept_list %}
+            <tr>
+              <td>{{loop.index}}</td>
+              <td>{{x[1]}}</td>
+              <td>{{x[2]}}</td>
+              <td>
+                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id ="edit" data-id="{{x[0]}}" data-deptname="{{x[1]}}" data-acrn="{{x[2]}}"><i class="fa fa-pencil"></i> Edit</a></div>
+                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs"  id="delete" data-id="{{x[0]}}" ><i class="fa fa-trash"></i> delete</a></div></td>
+              </td>
+            </tr>
+            {% endfor%}
           </tbody>
+
         </table>
       </div>
     </div>
@@ -71,7 +81,7 @@
           <div class="form-group">
             <label for="exampleInputEmail1">Department Name</label>
             <input type="text" name="department_name" id="edit_dept_name" class="form-control" required>
-            <input type="text" name="sid" id="edit-id" hidden="">
+            <input type="text" name="sid" id="edit-id" hidden="" value="">
           </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Acronym</label>
@@ -91,55 +101,26 @@
 <!-- /.modal -->
 {% endblock %}
 {% block script %}
-<script>
-  $(function () {
-    $("#department_table").DataTable({
-      "responsive": true, 
-      "lengthChange": false, 
-      "autoWidth": false,
-      "paging": true,
-      "searching": true,
-      "ordering": false,
-      "info": false,
-      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-    }).container().appendTo('#department_table_wrapper .col-md-6:eq(0)');
-  });
-</script>
 
 
 <script type="text/javascript">
+// ajax data---------------------------------------------
+function get_dept(){
+  $.ajax({
+    url: "{{ url_for('departments.dept_show')}}",
+    type:"get",
+    data: {id:"none"},
+    success: function(data){     
+      //$('#load-table').empty().append(data);
+    }    
+  });
+}
 
-  
-    
-    // load data---------------------------------------------
-    function load_department(){
-      $("#load-table").html('');
-      var count = 0
-      $.ajax({
-        url : "{{ url_for('departments.load_department')}}",
-        type : "GET",
-        success : function(data){
-          $.each(data, function(key, value){ 
-            var inc = ++count
-            
-            $("#load-table").append(
-            '<tr>'+  
-              '<td>'+ inc+'</td>'+
-              '<td>'+ value[1] +'</td>'+
-              '<td>'+ value[2] +'</td>'+
-              '<td>'+
-                '<div class="btn-group">'+'<a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id = "edit" data-id="'+value[0]+'" data-name="'+value[1]+'" data-acro="'+value[2]+'"><i class="fa fa-pencil"></i> Edit</a>'+'</div>'+
-                {% if account[2] == 1 %} 
-                '<div class="btn-group">'+'<a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs" id = "delete" data-id="'+value[0]+'" ><i class="fa fa-trash"></i> Edit</a>'+'</div>'+
-                {% endif %}
-                '</td>'+
-                '</tr>'
-                );
-              });
-            }
-          });
-        }
-       
+
+
+
+
+
         // insert data---------------------------------------------
         $('#save-button').on("click",function(e){
           e.preventDefault();
@@ -150,14 +131,14 @@
           }
           else{
             $.ajax({
-              url : "{{ url_for('departments.add_department')}}",
+              url : "{{ url_for('departments.dept_store')}}",
               type : "POST",
               data : JSON.stringify({department_name : dept_name, acronym : dept_acr}),
               dataType : "json",
               contentType : "application/json; charset=utf-8",
               success : function(data){
                 if (data == 1) {
-                  load_department();
+                  get_dept();
                   $('#addForm').trigger("reset");
                   stoast('Data has been Saved  !', 'success');
                 }else{
@@ -182,14 +163,14 @@
             if (result.isConfirmed) {
               var department_id = $(this).data("id");
               $.ajax({
-                url : "{{ url_for('departments.del_department')}}",
+                url : "{{ url_for('departments.dept_destroy')}}",
                 type : "POST",
                 data : JSON.stringify({id : department_id}),
                 dataType : "json",
                 contentType : "application/json; charset=utf-8",
                 success : function(data){
                   if (data == 1){
-                    load_department();
+                    get_dept();
                     Swal.fire(
                     'Deleted!',
                     'Your file has been deleted.',
@@ -209,8 +190,8 @@
         $(document).on("click","#edit", function(e){
           $('#modal-sm').modal('toggle');
           var id = $(this).data("id");
-          var name = $(this).data("name");
-          var acro = $(this).data("acro");
+          var name = $(this).data("deptname");
+          var acro = $(this).data("acrn");
           $('#edit-id').val(id);
           $('#edit_dept_name').val(name);
           $('#edit_dept_acr').val(acro);
@@ -226,14 +207,14 @@
             switalert('warning', 'All fields are required !');
           }else {
             $.ajax({
-              url : "{{ url_for('departments.upd_department')}}",
+              url : "{{ url_for('departments.dept_update')}}",
               type : "POST",
               data : JSON.stringify({id : id, department_name : name, acronym : acro}),
               dataType : "json",
               contentType : "application/json; charset=utf-8",
               success : function(data){
                 if (data == 1) {
-                  load_department();
+                  get_dept();
                   $('#modal-sm').modal('hide');
                   stoast('Data has been Updated  !', 'info');
                 }else{
@@ -245,7 +226,7 @@
         });
 
   $(document).ready(function(){
-    load_department();
+    get_dept();
       });
     </script>
 

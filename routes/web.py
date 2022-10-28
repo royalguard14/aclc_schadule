@@ -72,9 +72,11 @@ modules.route('/destroy', methods=['POST'])(module_destroy)
 
 #Department
 departments.route('/', methods=['GET'])(dept_index)
-departments.route('/create', methods=['POST'])(dept_store)
+departments.route('/create', methods=['POST','GET'])(dept_store)
 departments.route('/edit', methods=['POST'])(dept_update)
 departments.route('/delete', methods=['POST'])(dept_destroy)
+departments.route('/show', methods=['GET'])(dept_show)
+
 
 #Course
 courses.route('/', methods=['GET'])(course_index)
