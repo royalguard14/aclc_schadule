@@ -42,7 +42,7 @@
           <thead>
             <tr>
               <th>#</th>
-              <th>Deapartment</th>
+              <th>Department</th>
               <th>Acroname</th>
               <th>Action</th>
             </tr>
@@ -153,7 +153,7 @@ function get_dept(){
         $(document).on("click","#delete", function(e){
           Swal.fire({
             title: 'Are you sure?',
-            text: "You won't be able to revert this!",
+            text: "All data under this department will be delate,You won't be able to revert this!",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
@@ -179,8 +179,8 @@ function get_dept(){
                   }else{
                     switalert('error', "Can't Delete Record.");
                   }
-                }
-              });
+              }
+            });
             }
           })
         });
@@ -214,7 +214,6 @@ function get_dept(){
               contentType : "application/json; charset=utf-8",
               success : function(data){
                 if (data == 1) {
-                  get_dept();
                   $('#modal-sm').modal('hide');
                   stoast('Data has been Updated  !', 'info');
                 }else{
@@ -225,9 +224,6 @@ function get_dept(){
           }
         });
 
-  $(document).ready(function(){
-    get_dept();
-      });
-    </script>
+      </script>
 
-{% endblock %}
+      {% endblock %}

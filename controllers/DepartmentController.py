@@ -110,7 +110,20 @@ def dept_destroy():
         if request.endpoint.split(".")[0] in checker:
             if session['role'] == '1' or  session['role'] == '2':
                 data = request.get_json()
+
+                cursor.execute("select id from courses WHERE `dept_id` = %s",([data['id']]))
+                course_id = cursor.fetchall()
+
                 cursor.execute("DELETE FROM `departments` WHERE `id`=%s ",([data['id']]))
+                cursor.execute("DELETE FROM `courses` WHERE `dept_id`=%s ",([data['id']]))
+
+                #NOTE: Delete subjects where course_id = ?
+                #NOTE: Delete schedules where subj_id = ?
+                
+                # for x in course_id:
+                #     cursor.execute("DELETE FROM `subjects` WHERE `course_id`=%s ",([x[0]]))
+                #     cnx.commit()
+
                 cnx.commit()
                 return  "1"
             return abort(403)
@@ -118,7 +131,9 @@ def dept_destroy():
             return abort(403)
     else:
         return abort(401)    
-    
+
+
+
     
     
     

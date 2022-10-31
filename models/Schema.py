@@ -28,3 +28,18 @@ class UserSchema(Schema):
     email = fields.Str(required=True)
     link = fields.Str(required=True)
 
+class Depttab(Schema):
+    id = fields.Int(dump_only=True)
+    dept_name = fields.Str(required=True)
+
+class Coursetab(Schema):
+    id = fields.Int(dump_only=True)
+    course_name = fields.Str(required=True)
+
+class CourseAjax(Schema):
+    id = fields.Int(dump_only=True)
+    dept_id = fields.Int(dump_only=True)
+    course_name = fields.Str(required=True)
+    course_acronym = fields.Str(required=True)
+  
+
