@@ -28,6 +28,8 @@
 <link rel="stylesheet" href="{{ url_for('static',filename='/panel_assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">
 
 
+
+
   {% block head %} {% endblock %}
 </head>
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
@@ -324,6 +326,11 @@
 
 <script src="{{ url_for('static',filename='toast.js')}}"></script>
 
+
+<!-- Bootstrap Switch -->
+<script src="{{ url_for('static',filename='/panel_assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+
+
 <script>
   $(function () {
     $("#excel_table").DataTable({
@@ -334,6 +341,16 @@
       "info": false,
     });
   });
+
+
+  $(function () { 
+    $("input[data-bootstrap-switch]").each(function(){
+      $(this).bootstrapSwitch('state', $(this).prop('checked'))
+    })
+  });
+
+
+  
 </script>
 
 <!-- Select2 -->

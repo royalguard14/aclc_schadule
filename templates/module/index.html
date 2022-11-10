@@ -89,20 +89,6 @@
             </tr>
           </thead>
           <tbody id="load-table">
-            {% for x in modules %}
-            <tr>
-              <td>{{x['id']}}</td>
-              <td>{{x['module']}}</td>
-              <td>{{x['description']}}</td>
-              <td>{{x['routeUri']}}</td>
-              <td>{{x['default_url']}}</td>
-              <td>{{x['icon']}}</td>
-              <td>
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id ="edit" data-id="{{x['id']}}" data-mods="{{x['module']}}" data-icons="{{x['icon']}}" data-desc="{{x['description']}}" data-ruri="{{x['routeUri']}}" data-durl="{{x['default_url']}}"><i class="fa fa-pencil"></i> Edit</a></div>
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs"  id="delete" data-id="{{x['id']}}" ><i class="fa fa-trash"></i> delete</a></div>
-              </td>
-            </tr>
-            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -133,8 +119,7 @@
               <div class="form-group">
                 <div class="form-line">
                   <label for="mod">Icon</label>  
-                  <input type="text" name="sid" id="e_icons" hidden="">
-                  <select name="icon" class="form-control select2bs4" placeholder="Select Icon of the Module" id="e_iconss" readonly>
+                  <select name="icon" class="form-control select2bs4" placeholder="Select Icon of the Module" id="e_icons" readonly>
                   </select>                     
                 </div>
               </div>
@@ -178,6 +163,41 @@
 {% endblock %}
 {% block script %}
 <script>
+  loadmodules();
+// ajax data---------------------------------------------
+function loadmodules(){
+  $.ajax({
+    url: "{{ url_for('modules.module_show')}}",
+    type:"get",
+    data: {id:"none"},
+    success: function(data){   
+      $('#load-table').empty().append(data);
+    }    
+  });
+}
+    // updateselct data---------------------------------------------
+    function loaddatas2(x){
+      $.ajax({
+        url : "{{ url_for('modules.module_icons')}}",
+        type : "GET",
+        success : function(data){
+          $("#e_icons").empty();
+          var option1 = "<option>Select Icon</option>"; 
+          $("#e_icons").append(option1); 
+          var len = data.length; 
+          if(len > 0){
+            for(var i=0; i<len; i++){
+              if (data[i]['code'] ==  x){
+               var option = "<option value='"+data[i]['code']+"' selected>"+data[i]['code']+"</option>"; 
+             }else{
+               var option = "<option value='"+data[i]['code']+"'>"+data[i]['code']+"</option>"; 
+             }
+             $("#e_icons").append(option);   
+           }
+         }
+       }
+     });
+    }
   // Insert data---------------------------------------------
   $(document).on("click", "#save-button", function(e){
     e.preventDefault();
@@ -199,6 +219,7 @@
         success : function(data){
           if (data == 1) {
             $('#addForm').trigger("reset");
+            loadmodules();
             stoast('Data has been Saved  !', 'success');
           }else{
             switalert('error', "Can't Save Record.");
@@ -233,6 +254,7 @@
                 'Your file has been deleted.',
                 'success'
                 )
+              loadmodules();
             }else{
               switalert('error', "Can't Delete Record.");
             }
@@ -252,7 +274,7 @@
     var module_durl = $(this).data("durl");
     $('#edit-id').val(id);
     $('#e_mods').val(module_name);
-    $('#e_icons').val(module_icon);
+    loaddatas2(module_icon);
     $('#e_desc').val(module_description);
     $('#e_ruri').val(module_url);
     $('#e_durl').val(module_durl);
@@ -279,6 +301,7 @@
         success : function(data){
           if (data == 1) {
             $('#modal-sm').modal('hide');
+            loadmodules();
             stoast('Data has been Saved  !', 'success');
           }else{
             switalert('error', "Can't Save Record.");

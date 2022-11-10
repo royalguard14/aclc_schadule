@@ -21,6 +21,10 @@
               <label for="departmentAcronym">Acronym</label>
               <input type="text" name="department_acronym" id="dept_acr" class="form-control" required>
             </div>
+            <div class="form-group">
+              <label for="depthead">Department Head</label>
+              <input type="text" name="depthead" id="depthead" class="form-control" required>
+            </div>
           </div>
           <!-- /.card-body -->
           <button type="submit" class="btn btn-primary float-right" id="save-button">Submit</button>
@@ -44,23 +48,12 @@
               <th>#</th>
               <th>Department</th>
               <th>Acroname</th>
+              <th>Head / Deen</th>
               <th>Action</th>
             </tr>
           </thead>
           <tbody id="load-table">
-            {% for x in dept_list %}
-            <tr>
-              <td>{{loop.index}}</td>
-              <td>{{x[1]}}</td>
-              <td>{{x[2]}}</td>
-              <td>
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id ="edit" data-id="{{x[0]}}" data-deptname="{{x[1]}}" data-acrn="{{x[2]}}"><i class="fa fa-pencil"></i> Edit</a></div>
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs"  id="delete" data-id="{{x[0]}}" ><i class="fa fa-trash"></i> delete</a></div></td>
-              </td>
-            </tr>
-            {% endfor%}
           </tbody>
-
         </table>
       </div>
     </div>
@@ -87,6 +80,10 @@
             <label for="exampleInputPassword1">Acronym</label>
             <input type="text" name="department_acronym" id="edit_dept_acr" class="form-control" required>
           </div>
+          <div class="form-group">
+            <label for="depthead">Department Head</label>
+            <input type="text" name="depthead" id="edit_depthead" class="form-control" required>
+          </div>
         </form>
       </div>
       <div class="modal-footer justify-content-between">
@@ -99,41 +96,85 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
+<!-- Modal -->
+<div class="modal fade" id="update_progra">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Update Program</h4>
+      </div>
+      <div class="modal-body">
+        <form action="" id="edit-form">
+          <div class="form-group">
+            <input type="text" name="sid" id="edit-id2" hidden="" value="">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Program Offer:</label>
+            <input type="text" id="edit_program" class="form-control" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="edit_prg-submit">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+<div class="modal fade"  id="editAccessModal">
+  <div class="modal-dialog modal-lg">
+    <form action="">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Course List</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <div class="row" id="ajax_payslip">
+         </div>
+       </div>
+       <div class="modal-footer justify-content-between">
+        <button class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="submit" class="btn btn-primary" id="updatecors" >Confirm</button>
+      </div>
+    </div>
+  </form>
+</div>
+<!-- /.modal-content -->
+</div>
 {% endblock %}
 {% block script %}
-
-
 <script type="text/javascript">
+  get_dept();
 // ajax data---------------------------------------------
 function get_dept(){
   $.ajax({
     url: "{{ url_for('departments.dept_show')}}",
     type:"get",
-    data: {id:"none"},
     success: function(data){     
-      //$('#load-table').empty().append(data);
+      $('#load-table').empty().append(data);
     }    
   });
 }
-
-
-
-
-
-
         // insert data---------------------------------------------
         $('#save-button').on("click",function(e){
           e.preventDefault();
           var dept_name = $('#dept_name').val();
           var dept_acr = $('#dept_acr').val();
-          if ( dept_name == "" || dept_acr == "") {
+          var depthead = $('#depthead').val();
+          if ( dept_name == "" || dept_acr == ""  || depthead == "") {
             switalert('warning', 'All fields are required !');
           }
           else{
             $.ajax({
               url : "{{ url_for('departments.dept_store')}}",
               type : "POST",
-              data : JSON.stringify({department_name : dept_name, acronym : dept_acr}),
+              data : JSON.stringify({department_name : dept_name, acronym : dept_acr, dhead: depthead}),
               dataType : "json",
               contentType : "application/json; charset=utf-8",
               success : function(data){
@@ -148,7 +189,6 @@ function get_dept(){
             });
           }
         });
-
         // delete data---------------------------------------------
         $(document).on("click","#delete", function(e){
           Swal.fire({
@@ -172,49 +212,43 @@ function get_dept(){
                   if (data == 1){
                     get_dept();
                     Swal.fire(
-                    'Deleted!',
-                    'Your file has been deleted.',
-                    'success'
-                    )
+                      'Deleted!',
+                      'Your file has been deleted.',
+                      'success'
+                      )
                   }else{
                     switalert('error', "Can't Delete Record.");
                   }
-              }
-            });
+                }
+              });
             }
           })
         });
-
-
-        // update data---------------------------------------------
-        $(document).on("click","#edit", function(e){
-          $('#modal-sm').modal('toggle');
+        // update program---------------------------------------------
+        $(document).on("click","#edit_prog", function(e){
+          $('#update_progra').modal('toggle');
           var id = $(this).data("id");
-          var name = $(this).data("deptname");
-          var acro = $(this).data("acrn");
-          $('#edit-id').val(id);
-          $('#edit_dept_name').val(name);
-          $('#edit_dept_acr').val(acro);
+          var name = $(this).data("program");
+          $('#edit-id2').val(id);
+          $('#edit_program').val(name);
         });
-        
-        //Update Record------------------------------------------
-        $(document).on("click", "#edit-submit", function(e){
+        $(document).on("click", "#edit_prg-submit", function(e){
           e.preventDefault();
-          var id =  $('#edit-id').val();
-          var name = $('#edit_dept_name').val();
-          var acro = $('#edit_dept_acr').val();
-          if (name == "" || acro == "") {
+          var id =  $('#edit-id2').val();
+          var name = $('#edit_program').val();
+          if (name == "") {
             switalert('warning', 'All fields are required !');
           }else {
             $.ajax({
-              url : "{{ url_for('departments.dept_update')}}",
+              url : "{{ url_for('departments.dept_update_progs')}}",
               type : "POST",
-              data : JSON.stringify({id : id, department_name : name, acronym : acro}),
+              data : JSON.stringify({id : id, prog : name}),
               dataType : "json",
               contentType : "application/json; charset=utf-8",
               success : function(data){
                 if (data == 1) {
-                  $('#modal-sm').modal('hide');
+                  $('#update_progra').modal('hide');
+                  get_dept();
                   stoast('Data has been Updated  !', 'info');
                 }else{
                   switalert('error', "Can't Save Record.");
@@ -223,7 +257,84 @@ function get_dept(){
             });
           }
         });
-
+        // update data---------------------------------------------
+        $(document).on("click","#edit", function(e){
+          $('#modal-sm').modal('toggle');
+          var id = $(this).data("id");
+          var name = $(this).data("deptname");
+          var acro = $(this).data("acrn");
+          var deptheds = $(this).data("head");
+          $('#edit-id').val(id);
+          $('#edit_dept_name').val(name);
+          $('#edit_dept_acr').val(acro);
+          $('#edit_depthead').val(deptheds);
+        });
+        $(document).on("click", "#edit-submit", function(e){
+          e.preventDefault();
+          var id =  $('#edit-id').val();
+          var name = $('#edit_dept_name').val();
+          var acro = $('#edit_dept_acr').val();
+          var heads = $('#edit_depthead').val();
+          if (name == "" || acro == "" || heads == "") {
+            switalert('warning', 'All fields are required !');
+          }else {
+            $.ajax({
+              url : "{{ url_for('departments.dept_update')}}",
+              type : "POST",
+              data : JSON.stringify({id : id, department_name : name, acronym : acro, dhead: heads}),
+              dataType : "json",
+              contentType : "application/json; charset=utf-8",
+              success : function(data){
+                if (data == 1) {
+                  $('#modal-sm').modal('hide');
+                  get_dept();
+                  stoast('Data has been Updated  !', 'info');
+                }else{
+                  switalert('error', "Can't Save Record.");
+                }
+              }
+            });
+          }
+        });
+        function editaccess(elem){
+          var x = elem.id;
+          $.ajax({
+            url: "courseList/"+ x,
+            type:"POST",
+            data: {"id": x},
+            success: function(data){       
+              $('#editAccessModal').modal('toggle'); 
+              $('#ajax_payslip').empty().append(data);
+            }    
+          });
+        }
+        $(document).on("click", "#updatecors", function(e){
+          e.preventDefault();
+          var x = $("#type").val();
+          var insert = [];
+          $('.get_value').each(function(){
+            if($(this).is(":checked")){
+              insert.push($(this).val());
+            }
+          });
+          insert = insert.toString();
+          var insert_string = insert;
+          $.ajax({
+            url : "{{ url_for('departments.corse_update')}}",
+            type : "POST",
+            data : JSON.stringify({id : x, modules : insert_string}),
+            dataType : "json",
+            contentType : "application/json; charset=utf-8",
+            success : function(data){
+              if (data == 1) {
+                $('#editAccessModal').modal('hide');
+                stoast('Data has been Saved  !', 'success');
+                load_role();
+              }else{
+                switalert('error', "Can't Save Record.");
+              }
+            }
+          });
+        });
       </script>
-
       {% endblock %}

@@ -1,9 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from sqlalchemy import DateTime
-
 db = SQLAlchemy()
-
 #===================================================
 class Role(db.Model):
     __tablename__ = 'roles'
@@ -21,7 +19,6 @@ class Role(db.Model):
             'modules': self.modules,
             'log': self.log,
         }
-        
 #===================================================
 class Module(db.Model):
     __tablename__ = 'modules'
@@ -45,10 +42,6 @@ class Module(db.Model):
             'default_url': self.default_url,
             'encryptname': self.encryptname
         }
-
-
-
-
 #===================================================
 class User(db.Model):
     __tablename__ = 'users'
@@ -76,7 +69,6 @@ class User(db.Model):
             'role': self.role,
             'link': self.link
         }
-        
 #===================================================   
 class Profile(db.Model):
     __tablename__ = 'profiles'
@@ -109,33 +101,34 @@ class Profile(db.Model):
             'link': self.link
         }
 #===================================================
-
 class Department(db.Model):
     __tablename__ = 'departments'
     id = db.Column(db.Integer, primary_key=True)
     dept_name = db.Column(db.String(50))
     dept_acronym = db.Column(db.String(10))
+    dept_head = db.Column(db.String(50))
+    dept_course = db.Column(db.String(500))
+    dept_program = db.Column(db.String(500))
     created_at = db.Column(DateTime, default=datetime.now)
     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
+
     @property
     def serialize(self):
         return {
             'id': self.id,
             'dept_name': self.dept_name,
             'dept_acronym': self.dept_acronym,
+            'dept_head': self.dept_head,
+            'dept_course': self.dept_course,
+            'dept_program': self.dept_program
         }
-
-
-
-
 #===================================================
-
 class Course(db.Model):
     __tablename__ = 'courses'
     id = db.Column(db.Integer, primary_key=True)
-    dept_id = db.Column(db.String(50))
     course_name = db.Column(db.String(25))
     course_acronym = db.Column(db.String(10))
+    course_subject = db.Column(db.String(10))
     created_at = db.Column(DateTime, default=datetime.now)
     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
     @property
@@ -144,71 +137,76 @@ class Course(db.Model):
             'id': self.id,
             'dept_id': self.dept_id,
             'course_name': self.course_name,
-            'course_acronym': self.course_acronym
+            'course_acronym': self.course_acronym,
+            'course_subject': self.course_subject
         }
-
-
-
 #===================================================
 class Subject(db.Model):
     __tablename__ = 'subjects'
     id = db.Column(db.Integer, primary_key=True)
-    course_id = db.Column(db.String(15))
     subj_name = db.Column(db.String(50))
     subj_code = db.Column(db.String(10))
     units = db.Column(db.String(10))
-    pre_requisite = db.Column(db.String(10))
-    syr = db.Column(db.String(10))
+    pre_requisite = db.Column(db.String(500))
     created_at = db.Column(DateTime, default=datetime.now)
     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'course_id': self.course_id,
             'subj_name': self.subj_name,
             'subj_code': self.subj_code,
             'units': self.units,
             'pre_requisite': self.pre_requisite,
-            'syr': self.syr
         }
-
-
 #===================================================
-class Schedule(db.Model):
-    __tablename__ = 'schedules'
+class Room(db.Model):
+    __tablename__ = 'rooms'
     id = db.Column(db.Integer, primary_key=True)
-    subj_id = db.Column(db.String(50))
-    sched_json = db.Column(db.String(5000))
+    room_name = db.Column(db.String(50))
+    room_type = db.Column(db.String(10))
     created_at = db.Column(DateTime, default=datetime.now)
     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
     @property
     def serialize(self):
         return {
             'id': self.id,
-            'subj_id': self.subj_id,
-            'sched_json': self.sched_json,
-            
+            'room_name': self.room_name,
+            'room_type': self.room_type,
         }
 #===================================================
-class SchoolR(db.Model):
-    __tablename__ = 'school_records'
-    id = db.Column(db.Integer, primary_key=True)
-    usn = db.Column(db.String(50))
-    accademic_year = db.Column(db.String(25))
-    course = db.Column(db.String(50))
-    year = db.Column(db.String(10))
-    study_load = db.Column(db.String(10000))
-    created_at = db.Column(DateTime, default=datetime.now)
-    updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
-    @property
-    def serialize(self):
-        return {
-            'id': self.id,
-            'usn': self.usn,
-            'accademic_year': self.accademic_year,
-            'course': self.course,
-            'year': self.year,
-            'study_load': self.study_load,
-        }
-
+# class Schedule(db.Model):
+#     __tablename__ = 'schedules'
+#     id = db.Column(db.Integer, primary_key=True)
+#     subj_id = db.Column(db.String(50))
+#     sched_json = db.Column(db.String(5000))
+#     created_at = db.Column(DateTime, default=datetime.now)
+#     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
+#     @property
+#     def serialize(self):
+#         return {
+#             'id': self.id,
+#             'subj_id': self.subj_id,
+#             'sched_json': self.sched_json,
+#         }
+#===================================================
+# class SchoolR(db.Model):
+#     __tablename__ = 'school_records'
+#     id = db.Column(db.Integer, primary_key=True)
+#     usn = db.Column(db.String(50))
+#     accademic_year = db.Column(db.String(25))
+#     course = db.Column(db.String(50))
+#     year = db.Column(db.String(10))
+#     study_load = db.Column(db.String(10000))
+#     created_at = db.Column(DateTime, default=datetime.now)
+#     updated_at = db.Column(DateTime, default=datetime.now, onupdate=datetime.now)
+#     @property
+#     def serialize(self):
+#         return {
+#             'id': self.id,
+#             'usn': self.usn,
+#             'accademic_year': self.accademic_year,
+#             'course': self.course,
+#             'year': self.year,
+#             'study_load': self.study_load,
+#         }

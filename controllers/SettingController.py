@@ -39,6 +39,36 @@ def role_index():
             return abort(403)
     else:
         return abort(401)
+
+
+
+def role_show():
+    roles = Role.query.all()
+    data = role_schema.dump(roles,many=True)
+
+
+    #AJAX
+    output = ''
+    ind = 0  
+    for x in data:
+        users_count = User.query.filter_by(role = x['id']).count()
+        ind = ind + 1
+        if ind % 2 == 0:
+            trc = '<tr class="even">'
+        else:
+            trc = '<tr class="odd">'
+        output = output + trc
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(ind)
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(x['group'])
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(users_count)
+        output = output + '<td>'
+        output = output + '<button type="button" class="btn btn-success btn-xs" id="{}" onclick="editaccess(this)" ><i class="fa fa-object-ungroup"></i></button>'.format(x['id'])
+        output = output + '<button type="button" class="btn btn-warning btn-xs" id="{}" onclick="useraccess(this)"><i class="fa fa-users-gear"></i></button>'.format(x['id'])
+        output = output + '<button type="button" class="btn btn-info btn-xs" id="editro" data-group="{}" data-id="{}"><i class="fa fa-pencil"></i></button>'.format(x['group'],x['id'])
+        output = output + '<button type="button" class="btn btn-danger btn-xs" id="delete" data-id="{}"><i class="fa fa-trash"></i></button>'.format(x['id'])
+        output = output + '</td>'
+        output = output + '</tr>' 
+    return output
     
        
 
@@ -60,15 +90,9 @@ def role_destroy():
     cursor.execute("UPDATE `users` SET `role`='0' WHERE `role` = %s",([data['id']]))
     cnx.commit()
     return  "1"
-    
-def loadrole():
-    roles = Role.query.all()
-    data = role_schema.dump(roles,many=True)    
-    return custom_response(data, 200)
 
-def count_roleusser(id):
-    data = User.query.filter(User.role == id ).count()
-    return custom_response(data, 200)
+
+
 
 def mod_list(id):
     output=''

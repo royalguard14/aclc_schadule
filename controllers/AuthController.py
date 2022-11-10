@@ -10,8 +10,8 @@ db = SQLAlchemy()
 load_dotenv()
 
 
-emptynavs = [5,6,7,8,9,10]
-adminnavs = [1,2,3,4,11]
+emptynavs = [5,6,7,8,9,10,11]
+adminnavs = [1,2,3,4,12]
 
 role_schema = RoleSchema()
 module_schema = ModulesSchema()

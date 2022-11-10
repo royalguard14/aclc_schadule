@@ -15,6 +15,7 @@ from controllers.SettingController import *
 from controllers.SubjectController import *
 from controllers.UserController import *
 from controllers.AdminController import *
+from controllers.RoomController import *
 
 '''
 Blueprints
@@ -32,7 +33,7 @@ students = Blueprint('students', __name__)
 admins = Blueprint('admins', __name__)
 users = Blueprint('users', __name__)
 ipaccess = Blueprint('ipaccess', __name__)
-
+rooms = Blueprint('rooms', __name__)
 
 '''
 ROUTES
@@ -54,12 +55,14 @@ settings.route('/', methods=['GET'])(role_index)
 settings.route('/create', methods=['POST'])(role_store)
 settings.route('/edit', methods=['POST'])(role_update)
 settings.route('/delete', methods=['POST'])(role_destroy)
-settings.route('/load_role')(loadrole)
-settings.route('count/<id>', methods=['POST','GET'])(count_roleusser)
 settings.route('modsList/<id>', methods=['POST','GET'])(mod_list)
 settings.route('modsUpdate', methods = ['POST'])(mod_update)
-settings.route('userList', methods=['POST','GET'])(userlist)
+settings.route('userlist', methods=['POST','GET'])(userlist)
 settings.route('userupdate', methods=['POST','GET'])(useraccessupdate)
+settings.route('/load_role')(role_show)
+
+
+
 
 #Modules
 modules.route('/', methods=['GET'])(module_index)
@@ -67,6 +70,7 @@ modules.route('/create', methods=['POST'])(module_store)
 modules.route('/load_mod')(module_show)
 modules.route('/edit', methods=['POST'])(module_update)
 modules.route('/destroy', methods=['POST'])(module_destroy)
+modules.route('/mod_icon', methods=['GET'])(module_icons)
 
 
 
@@ -75,7 +79,11 @@ departments.route('/', methods=['GET'])(dept_index)
 departments.route('/create', methods=['POST','GET'])(dept_store)
 departments.route('/edit', methods=['POST'])(dept_update)
 departments.route('/delete', methods=['POST'])(dept_destroy)
-departments.route('/show', methods=['GET'])(dept_show)
+departments.route('/show', methods=['GET'])(dept_show) 
+departments.route('/edit_prog', methods=['POST'])(dept_update_progs)
+departments.route('courseList/<id>', methods=['POST','GET'])(corse_list)
+departments.route('corsUpdate', methods = ['POST'])(corse_update)
+
 
 
 #Course
@@ -83,8 +91,12 @@ courses.route('/', methods=['GET'])(course_index)
 courses.route('/create', methods=['POST'])(course_store)
 courses.route('/edit', methods=['POST'])(course_update)
 courses.route('/delete', methods=['POST'])(course_destroy)
-# courses.route('/try', methods=['GET'])(course_show)
-courses.route('/get_courses', methods=['GET'])(for_subselect)
+courses.route('/show', methods=['GET'])(course_show)
+courses.route('subjList/<id>', methods=['POST','GET'])(subj_list)
+courses.route('subjUpdate', methods = ['POST'])(subjs_update)
+
+
+
 
 
 
@@ -121,6 +133,13 @@ admins.route('/create', methods=['POST'])(admin_store)
 admins.route('/edit', methods=['POST'])(admin_update)
 admins.route('/delete', methods=['POST'])(admin_destroy)
 
+
+#Rooms
+rooms.route('/', methods=['GET'])(room_index)
+rooms.route('/create', methods=['POST'])(room_store)
+rooms.route('/edit', methods=['POST'])(room_update)
+rooms.route('/delete', methods=['POST'])(room_destroy)
+rooms.route('/show', methods=['POST'])(room_show)
 
 
 #User

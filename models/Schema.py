@@ -21,7 +21,7 @@ class ModulesSchema(Schema):
     icon = fields.Str(required=True)
     default_url = fields.Str(required=True)
     encryptname = fields.Str(required=True)
-
+#################################################
 
 class UserSchema(Schema):
     id = fields.Int(dump_only=True)
@@ -41,5 +41,32 @@ class CourseAjax(Schema):
     dept_id = fields.Int(dump_only=True)
     course_name = fields.Str(required=True)
     course_acronym = fields.Str(required=True)
+################ALL####################
+class DepartmentSchema(Schema):
+    id = fields.Int(dump_only=True)
+    dept_name = fields.Str(required=True)
+    dept_acronym = fields.Str(required=True)
+    dept_head = fields.Str(required=True)
+    dept_course = fields.Str(required=True)
+    dept_program = fields.Str(required=True)
+
+class CourseSchema(Schema):
+    id = fields.Int(dump_only=True)
+    dept_name = fields.Str(required=True)
+    course_name = fields.Str(required=True)
+    course_acronym = fields.Str(required=True)
+    course_subject = fields.Str(required=True)
+
+class SubjectSchema(Schema):
+    id = fields.Int(dump_only=True)
+    subj_name = fields.Str(required=True)
+    subj_code = fields.Str(required=True)
+    units = fields.Str(required=True)
+    pre_requisite = fields.Str(required=True)
+
+class RoomSchema(Schema):
+    id = fields.Int(dump_only=True)
+    room_name = fields.Str(required=True)
+    room_type = fields.Str(required=True)
   
 

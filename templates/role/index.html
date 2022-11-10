@@ -87,7 +87,6 @@
   </div>
 </div>
 <!-- /.row -->
-
 <div class="modal fade" id="addrole">
   <div class="modal-dialog modal-sm">
     <form>
@@ -123,22 +122,18 @@
           </button>
         </div>
         <div class="modal-body">
-        
           <select name="users" id="selectuser" style="width: 100%; color: green" multiple class = "select2bs4">
-
           </select>
-
-       </div>
-       <div class="modal-footer float-right">
-        <button type="submit" class="btn btn-primary" id="assignroles">Give Access</button>
+        </div>
+        <div class="modal-footer float-right">
+          <button type="submit" class="btn btn-primary" id="assignroles">Give Access</button>
+        </div>
       </div>
-    </div>
-    <!-- /.modal-content -->
-  </form>
+      <!-- /.modal-content -->
+    </form>
+  </div>
+  <!-- /.modal-dialog -->
 </div>
-<!-- /.modal-dialog -->
-</div>
-
 <!-- /.modal -->
 <div class="modal fade" id="editrole">
   <div class="modal-dialog modal-sm">
@@ -164,7 +159,6 @@
   <!-- /.modal-dialog -->
 </div>
 <!-- /.modal -->
-
 <div class="modal fade"  id="editAccessModal">
   <div class="modal-dialog modal-lg">
     <form action="">
@@ -189,124 +183,41 @@
 <!-- /.modal-content -->
 </div>
 <!-- /.modal-dialog -->
-
-{% endblock %}
+{% endblock %}s
 {% block script %}
 <script>
   function load_role(){
-    $("#load-table").html('');
-    var count = 0
     $.ajax({
-      url : "{{ url_for('settings.loadrole')}}",
-      type : "GET",
-      dataType: "json",
-      success : function(data){
-        $.each(data, function(key, value){
-          var inc = ++count
-          $.ajax({
-            url : "count/"+value.id,
-            type : "GET",
-            dataType: "json",
-            success : function(data2){
-              $("#load-table").append('<tr>'+
-                '<td class="center">'+ inc +'</td>'+
-                '<td>'+ value.group +'</td>'+
-                '<td>'+ data2 +'</td>'+
-                '<td>'+
-                '<button type="button" class="btn btn-success btn-xs" id="'+value.id+'" onclick="editaccess(this)" ><i class="fa fa-object-ungroup"></i></button>'+
-                '<button type="button" class="btn btn-warning btn-xs" id="'+value.id+'" onclick="useraccess(this)"><i class="fa fa-users-gear"></i></button>'+
-                '<button type="button" class="btn btn-info btn-xs" id="editro" data-group="'+value.group+'" data-id="'+value.id+'"><i class="fa fa-pencil"></i></button>'+                                                                                         
-                '<button type="button" class="btn btn-danger btn-xs" id="delete" data-id="'+ value.id +'"><i class="fa fa-trash"></i></button> ' +                          
-                '</td>'+
-                '</tr>');
-            }
-          });
-        });
-      }
-    });
-  }
-  function addrole(){
-    $('#addrole').modal('toggle'); 
-  }
-  function editaccess(elem){
-    var x = elem.id;
-    $.ajax({
-      url: "modsList/"+ x,
-      type:"POST",
-      data: {"id": x},
-      success: function(data){       
-        $('#editAccessModal').modal('toggle'); 
-        $('#ajax_payslip').empty().append(data);
+      url: "{{ url_for('settings.role_show')}}",
+      type:"get",
+      success: function(data){   
+        $('#load-table').empty().append(data);
       }    
     });
   }
-  function useraccess(elem){
-    var x = elem.id;
-    $.ajax({
-      url: "userlist",
-      type:"POST",
-      data: {"id": x},
-      success: function(data){       
-        $('#assignrole').modal('toggle'); 
-        $('#selectuser').empty().append(data);
-      }    
-    });
+///////////////////////////////////////////
+function addrole(){
+  $('#addrole').trigger("reset");
+  $('#addrole').modal('toggle'); 
+}
+$('#addrolss').on("click",function(e){
+  e.preventDefault();
+  var rolename = $('#name_group').val();
+  var user = $('#user_id').val();
+  var add = 'create by:' + user + '|';
+  if ( rolename == "" || user == "") {
+    switalert('warning', 'All fields are required !');
   }
-
-  $(document).on("click","#delete", function(e){
-    Swal.fire({
-      title: 'Are you sure?',
-      text: "You won't be able to revert this!",
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, delete it!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        var x = $(this).data("id");
-        $.ajax({
-          url : "{{ url_for('settings.role_destroy')}}",
-          type : "POST",
-          data : JSON.stringify({id : x}),
-          dataType : "json",
-          contentType : "application/json; charset=utf-8",
-          success : function(data){
-            if (data == 1){
-              load_role();
-              Swal.fire(
-                'Deleted!',
-                'Your file has been deleted.',
-                'success'
-                )
-            }else{
-              switalert('error', "Can't Delete Record.");
-            }
-          }
-        });
-      }
-    })
-  });
-  $(document).on("click", "#updatemod", function(e){
-    e.preventDefault();
-    var x = $("#type").val();
-    var insert = [];
-    $('.get_value').each(function(){
-      if($(this).is(":checked")){
-        insert.push($(this).val());
-      }
-    });
-    insert = insert.toString();
-    var insert_string = insert;
+  else{
     $.ajax({
-      url : "{{ url_for('settings.mod_update')}}",
+      url : "{{ url_for('settings.role_store')}}",
       type : "POST",
-      data : JSON.stringify({id : x, modules : insert_string}),
+      data : JSON.stringify({rolename : rolename, user : add}),
       dataType : "json",
       contentType : "application/json; charset=utf-8",
       success : function(data){
         if (data == 1) {
-          $('#editAccessModal').modal('hide');
+          $('#addrole').modal('hide');
           stoast('Data has been Saved  !', 'success');
           load_role();
         }else{
@@ -314,110 +225,161 @@
         }
       }
     });
-  });
-  $(document).on("click","#editro", function(e){
-    $('#editrole').modal('toggle');
-    var id = $(this).data("id");
-    var name = $(this).data("group");
-    $('#user_id_edit').val(id);
-    $('#name_group_edit').val(name);
-  });
-
-  $('#updaterolss').on("click",function(e){
-    e.preventDefault();
-    var rolename = $('#name_group_edit').val();
-    var user = $('#user_id_edit').val();
-    if ( rolename == "" || user == "") {
-      switalert('warning', 'All fields are required !');
-    }
-    else{
+  }
+});
+////////////////////////////////////////////
+$(document).on("click","#delete", function(e){
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      var x = $(this).data("id");
       $.ajax({
-        url : "{{ url_for('settings.role_update')}}",
+        url : "{{ url_for('settings.role_destroy')}}",
         type : "POST",
-        data : JSON.stringify({rolename : rolename, id : user}),
+        data : JSON.stringify({id : x}),
         dataType : "json",
         contentType : "application/json; charset=utf-8",
         success : function(data){
-          if (data == 1) {
-            $('#editrole').trigger("reset");
-            $('#editrole').modal('hide');
-            stoast('Data has been Saved  !', 'success');
+          if (data == 1){
             load_role();
+            Swal.fire(
+              'Deleted!',
+              'Your file has been deleted.',
+              'success'
+              )
           }else{
-            switalert('error', "Can't Save Record.");
+            switalert('error', "Can't Delete Record.");
           }
         }
       });
     }
-  });
-  $('#addrolss').on("click",function(e){
-    e.preventDefault();
-    var rolename = $('#name_group').val();
-    var user = $('#user_id').val();
-    var add = 'create by:' + user + '|';
-    if ( rolename == "" || user == "") {
-      switalert('warning', 'All fields are required !');
-    }
-    else{
-      $.ajax({
-        url : "{{ url_for('settings.role_store')}}",
-        type : "POST",
-        data : JSON.stringify({rolename : rolename, user : add}),
-        dataType : "json",
-        contentType : "application/json; charset=utf-8",
-        success : function(data){
-          if (data == 1) {
-            $('#addrole form :input').val("");
-            $('#addrole').modal('hide');
-            stoast('Data has been Saved  !', 'success');
-            load_role();
-          }else{
-            switalert('error', "Can't Save Record.");
-          }
-        }
-      });
-    }
-  });
-
-  $(document).on("click", "#assignroles", function(e){
-    e.preventDefault();
-    var x = $("#type").val();
-    var selected = [];
-    for (var option of document.getElementById('selectuser').options) {
-     if (option.selected) {
-     selected.push(option.value);
-     }
-    }
-
+  })
+});
+///////////////////////////////////////////////
+$(document).on("click","#editro", function(e){
+  $('#editrole').modal('toggle');
+  var id = $(this).data("id");
+  var name = $(this).data("group");
+  $('#user_id_edit').val(id);
+  $('#name_group_edit').val(name);
+});
+$('#updaterolss').on("click",function(e){
+  e.preventDefault();
+  var rolename = $('#name_group_edit').val();
+  var user = $('#user_id_edit').val();
+  if ( rolename == "" || user == "") {
+    switalert('warning', 'All fields are required !');
+  }
+  else{
     $.ajax({
-      url: "userupdate",
-      type:"POST",
-      data : JSON.stringify({id : x, upgru : selected}),
+      url : "{{ url_for('settings.role_update')}}",
+      type : "POST",
+      data : JSON.stringify({rolename : rolename, id : user}),
       dataType : "json",
       contentType : "application/json; charset=utf-8",
-      success: function(data){       
+      success : function(data){
         if (data == 1) {
-          $('#assignrole').modal('hide');
+          $('#editrole').trigger("reset");
+          $('#editrole').modal('hide');
           stoast('Data has been Saved  !', 'success');
           load_role();
         }else{
           switalert('error', "Can't Save Record.");
         }
-      }    
+      }
     });
-    
+  }
+});
+//////////////////////////////////////////////
+function editaccess(elem){
+  var x = elem.id;
+  $.ajax({
+    url: "modsList/"+ x,
+    type:"POST",
+    data: {"id": x},
+    success: function(data){       
+      $('#editAccessModal').modal('toggle'); 
+      $('#ajax_payslip').empty().append(data);
+    }    
   });
-
-
+}
+function useraccess(elem){
+  var x = elem.id;
+  $.ajax({
+    url: "userlist",
+    type:"POST",
+    data: {"id": x},
+    success: function(data){       
+      $('#assignrole').modal('show'); 
+      $('#selectuser').empty().append(data);
+    }    
+  });
+}
+$(document).on("click", "#updatemod", function(e){
+  e.preventDefault();
+  var x = $("#type").val();
+  var insert = [];
+  $('.get_value').each(function(){
+    if($(this).is(":checked")){
+      insert.push($(this).val());
+    }
+  });
+  insert = insert.toString();
+  var insert_string = insert;
+  $.ajax({
+    url : "{{ url_for('settings.mod_update')}}",
+    type : "POST",
+    data : JSON.stringify({id : x, modules : insert_string}),
+    dataType : "json",
+    contentType : "application/json; charset=utf-8",
+    success : function(data){
+      if (data == 1) {
+        $('#editAccessModal').modal('hide');
+        stoast('Data has been Saved  !', 'success');
+        load_role();
+      }else{
+        switalert('error', "Can't Save Record.");
+      }
+    }
+  });
+});
+$(document).on("click", "#assignroles", function(e){
+  e.preventDefault();
+  var x = $("#type").val();
+  var selected = [];
+  for (var option of document.getElementById('selectuser').options) {
+   if (option.selected) {
+     selected.push(option.value);
+   }
+ }
+ $.ajax({
+  url: "userupdate",
+  type:"POST",
+  data : JSON.stringify({id : x, upgru : selected}),
+  dataType : "json",
+  contentType : "application/json; charset=utf-8",
+  success: function(data){       
+    if (data == 1) {
+      $('#assignrole').modal('hide');
+      stoast('Data has been Saved  !', 'success');
+      load_role();
+    }else{
+      switalert('error', "Can't Save Record.");
+    }
+  }    
+});
+});
 </script>
-<!-- Bootstrap Switch -->
-<script src="{{ url_for('static',filename='/panel_assets/plugins/bootstrap-switch/js/bootstrap-switch.min.js')}}"></script>
+
 <script>
-  $(function () { 
-    $("input[data-bootstrap-switch]").each(function(){
-      $(this).bootstrapSwitch('state', $(this).prop('checked'))
-    })
-  });
   load_role();
+
 </script>
 {% endblock %}
