@@ -95,19 +95,13 @@ courses.route('/show', methods=['GET'])(course_show)
 courses.route('subjList/<id>', methods=['POST','GET'])(subj_list)
 courses.route('subjUpdate', methods = ['POST'])(subjs_update)
 
-
-
-
-
-
-
 #Subject
 subjects.route('/', methods=['GET'])(subj_index)
 subjects.route('/create', methods=['POST'])(subj_store)
 subjects.route('/edit', methods=['POST'])(subj_update)
 subjects.route('/delete', methods=['POST'])(subj_destroy)
-subjects.route('/yearajax', methods=['GET'])(yearajax)
-subjects.route('/semajax', methods=['GET'])(semajax)
+subjects.route('/show', methods=['GET'])(subj_show)
+
 
 #Schedule
 schedules.route('/', methods=['GET'])(sched_index)

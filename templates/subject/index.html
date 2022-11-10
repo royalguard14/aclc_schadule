@@ -22,11 +22,6 @@
             </div>
             <div class="row">
               <div class="form-group col-sm-6">
-                <label >Course</label>
-                <select id="select_course" class="form-control select2bs4" name="select_course">
-                </select>
-              </div>
-              <div class="form-group col-sm-6">
                 <label >Subj Code</label>
                 <input type="text" name="subject_code" id="subject_code" class="form-control" required>
               </div>
@@ -43,28 +38,6 @@
               </div>
             </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label >Year</label>
-                <select id="year" class="form-control select2bs4" name="year">
-                  <option value="0" selected="selected"> Select Year</option>
-                  <option value="1st" > First Year</option>
-                  <option value="2nd" > Second Year</option>
-                  <option value="3rd" > Third Year</option>
-                  <option value="4th" > Forth Year</option>
-                </select>
-
-              </div>
-              <div class="form-group col-sm-6">
-                <label >Semester</label>
-                <select id="sem" class="form-control select2bs4" name="sem">
-                  <option value="0" selected="selected"> Select Semester</option>
-                  <option value="1st" > First Semester</option>
-                  <option value="2nd" > Second Semester</option>
-                  <option value="3rd" > Third Semester</option>
-                </select>
-              </div>
-            </div>
 
             <div class="form-group">
               <label for="mod">Pre-requisite</label>   
@@ -87,12 +60,11 @@
           <h3 class="card-title">Subject List</h3>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body" style=" width:auto; overflow-y: auto; height: 500px;">
         <table id="excel_table" class="table table-bordered table-striped">
           <thead>
             <tr>
               <th>#</th>
-              <th>Course code</th>
               <th>Subject Name</th>
               <th>Subject code</th>
               <th>Unit</th>
@@ -101,24 +73,6 @@
             </tr>
           </thead>
           <tbody id="load-table">
-            {% for x in subj_list %}
-              {% set units = x[4].split("|") %}
-              {% set ys = x[6].split("|") %}
-            <tr>
-              <td>{{loop.index}}</td>
-              <td>{{course_list[x[1]]}}</td>
-              <td>{{x[2]}}</td>
-              <td>{{x[3]}}</td>
-              <td>{{ units[0]|int + units[1]|int }}</td>
-              <td>{{x[5]}}</td>
-              <td>
-
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-info btn-block btn-xs" id ="edit" data-id="{{x[0]}}"  data-ccode ="{{x[1]}}" data-sname ="{{x[2]}}" data-scode ="{{x[3]}}" data-lac ="{{units[0]|int}}" data-lab ="{{units[1]|int}}" data-yr ="{{ys[0]}}" data-sem ="{{ys[1]}}" data-pre ="{{x[5]}}"><i class="fa fa-pencil"></i> Edit</a></div>
-                <div class="btn-group"><a href="#" type="button" class="btn btn-outline-danger btn-block btn-xs"  id="delete" data-id="{{x[0]}}" ><i class="fa fa-trash"></i> delete</a></div></td>
-              </td>
-            </tr>
-
-            {% endfor %}
           </tbody>
         </table>
       </div>
@@ -130,7 +84,7 @@
 <!-- /.row -->
 <!-- Modal -->
 <div class="modal fade" id="modal-sm">
-  <div class="modal-dialog modal-lg">
+  <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title">EDIT SUBJECT</h4>
@@ -143,11 +97,6 @@
           <input type="text" name="subject_name" id="e_subject_name" class="form-control" required>
         </div>
         <div class="row">
-          <div class="form-group col-sm-6">
-            <label >Course</label>
-            <select id="e_select_course" class="form-control select2bs4" name="dept_id">
-            </select>
-          </div>
           <div class="form-group col-sm-6">
             <label >Subj Code</label>
             <input type="text" name="subject_code" id="e_subject_code" class="form-control" required>
@@ -165,28 +114,6 @@
           </div>
         </div>
 
-            <div class="row">
-              <div class="form-group col-sm-6">
-                <label >Year</label>
-                <select id="e_year" class="form-control select2bs4" name="year">
-                  <option value="0" selected="selected"> Select Year</option>
-                  <option value="1st" > First Year</option>
-                  <option value="2nd" > Second Year</option>
-                  <option value="3rd" > Third Year</option>
-                  <option value="4th" > Forth Year</option>
-                </select>
-
-              </div>
-              <div class="form-group col-sm-6">
-                <label >Semester</label>
-                <select id="e_sem" class="form-control select2bs4" name="sem">
-                  <option value="0" selected="selected"> Select Semester</option>
-                  <option value="1st" > First Semester</option>
-                  <option value="2nd" > Second Semester</option>
-                  <option value="3rd" > Third Semester</option>
-                </select>
-              </div>
-            </div>
 
 
         <div class="form-group">
@@ -210,157 +137,17 @@
 {% block script %}
 
 <script type="text/javascript">
-
-    function loaddatas2(x){
-      $.ajax({
-        url :"{{ url_for('courses.for_subselect')}}",
-        type :"GET",
-        success : function(data){
-
-      
-          $("#e_select_course").empty();
-     
-          var option1 ="<option>Select Course</option>"; 
-
-          $("#e_select_course").append(option1); 
-          var len = data.length; 
-          if(len > 0){
-            for(var i=0; i<len; i++){
-              if (data[i][0] == x){
-                 var option ="<option value='"+data[i][0]+"' selected>"+data[i][1]+"</option>"; 
-              }else{
-                 var option ="<option value='"+data[i][0]+"'>"+data[i][1]+"</option>"; 
-              }
-              $("#e_select_course").append(option);   
-            }
-          }
-        }
-      });
-    }
-
-
-//yearupdate
-  function loaddatas3(x){
-      $.ajax({
-        url :"{{ url_for('subjects.yearajax')}}",
-        type :"GET",
-        success : function(data){
-      
-          $("#e_year").empty();
-     
-          var len = data.length; 
-          if(len > 0){
-            for(var i=0; i<len; i++){
-              if (data[i][0] == x){
-                 var option ="<option value='"+data[i][0]+"' selected>"+data[i][1]+"</option>"; 
-              }else{
-                 var option ="<option value='"+data[i][0]+"'>"+data[i][1]+"</option>"; 
-              }
-              $("#e_year").append(option);   
-            }
-          }
-        }
-      });
-    }
-
-//yearupdate
-  function loaddatas4(x){
-      $.ajax({
-        url :"{{ url_for('subjects.semajax')}}",
-        type :"GET",
-        success : function(data){
-      
-          $("#e_sem").empty();
-     
-          var len = data.length; 
-          if(len > 0){
-            for(var i=0; i<len; i++){
-              if (data[i][0] == x){
-                 var option ="<option value='"+data[i][0]+"' selected>"+data[i][1]+"</option>"; 
-              }else{
-                 var option ="<option value='"+data[i][0]+"'>"+data[i][1]+"</option>"; 
-              }
-              $("#e_sem").append(option);   
-            }
-          }
-        }
-      });
-    }
-
-
-
-
-
-    // load course select---------------------------------------------
-    function load_courseSelect(){
-      $.ajax({
-        url :"{{ url_for('courses.for_subselect')}}",
-        type :"GET",
-        success : function(data){
-         $("#select_course").empty();
-         var option1 ="<option selected="+"selected" +">Select Course</option>"; 
-         $("#select_course").append(option1); 
-         var len = data.length; 
-         if(len > 0){
-          for(var i=0; i<len; i++){
-            var option ="<option value='"+data[i][0]+"'>"+data[i][1]+"-"+data[i][2]+"</option>"; 
-            $("#select_course").append(option);   
-          }
-        }
-
-      }
-    });
-    }
-
-
-    // Store course---------------------------------------------
-    $('#save-button').on("click",function(e){
-      e.preventDefault();
-
-      var subject_name = $('#subject_name').val();
-      var select_course = $('#select_course').val();
-      var subject_code = $('#subject_code').val();
-      var lec_unit = $('#lec_unit').val();
-      var lab_unit = $('#lab_unit').val();
-      var pre = $('#pre').val();
-      var year = $('#year').val();
-      var sem = $('#sem').val();
-
-
-
-      if ( subject_name =="" || select_course =="Select Course" || subject_code =="" || lec_unit =="" || lab_unit =="" || year =="0" || sem =="0") {
-        switalert('warning', 'All fields are required !');
-      }
-      else{
-        $.ajax({
-          url :"{{ url_for('subjects.subj_store')}}",
-          type :"POST",
-          data : JSON.stringify({
-           subject_name : subject_name, 
-           select_course : select_course, 
-           subject_code : subject_code, 
-           lec_unit : lec_unit, 
-           lab_unit : lab_unit, 
-           pre : pre, 
-           year : year,
-           sem : sem
-         }),
-
-          dataType :"json",
-          contentType :"application/json; charset=utf-8",
-          success : function(data){
-            if (data == 1) {
-              load_courseSelect()
-              $('#addForm').trigger("reset");
-              stoast('Data has been Saved  !', 'success');
-            }else{
-              switalert('error',"Can't Save Record.");
-            }
-          }
-        });
-      }
-    });
-
+  get_subj();
+// ajax data---------------------------------------------
+function get_subj(){
+  $.ajax({
+    url: "{{ url_for('subjects.subj_show')}}",
+    type:"get",
+    success: function(data){    
+      $('#load-table').empty().append(data);
+    }    
+  });
+}
 
         // update data---------------------------------------------
         $(document).on("click","#edit", function(e){
@@ -368,41 +155,28 @@
           $('#modal-sm').modal('toggle');
           var id = $(this).data("id");
           var subject_name = $(this).data("sname");
-          var select_course = $(this).data("ccode");
           var subject_code = $(this).data("scode");
           var lec_unit = $(this).data("lac");
           var lab_unit = $(this).data("lab");
           var pre = $(this).data("pre");
-          var year = $(this).data("yr");
-          var sem = $(this).data("sem");
-          loaddatas2(select_course);
-          loaddatas3(year);
-          loaddatas4(sem);
           $('#edit-id').val(id);
           $('#e_subject_name').val(subject_name);
           $('#e_subject_code').val(subject_code);
           $('#e_lec_unit').val(lec_unit);
           $('#e_lab_unit').val(lab_unit);
           $('#e_pre').val(pre);
-          $('#e_sem').val(sem);
         });
+  
 
-
-
-//Update Record------------------------------------------
-        $(document).on("click","#edit-submit", function(e){
+       $(document).on("click","#edit-submit", function(e){
           e.preventDefault();
           var id =  $('#edit-id').val();
           var subject_name = $('#e_subject_name').val();
-          var select_course = $('#e_select_course').val();
           var subject_code = $('#e_subject_code').val();
           var lec_unit = $('#e_lec_unit').val();
           var lab_unit = $('#e_lab_unit').val();
           var pre = $('#e_pre').val();
-          var year = $('#e_year').val();
-          var sem = $('#e_sem').val();
-
-          if (subject_name =="" || select_course =="Select Course" || subject_code =="" || lec_unit =="" || lab_unit =="" || year =="0" || sem =="0") {
+          if (subject_name =="" || subject_code =="" || lec_unit =="" || lab_unit =="") {
             switalert('warning', 'All fields are required !');
           }else {
             $.ajax({
@@ -411,19 +185,17 @@
               data : JSON.stringify({
                id : id,
                subject_name : subject_name, 
-               select_course : select_course, 
                subject_code : subject_code, 
                lec_unit : lec_unit, 
                lab_unit : lab_unit, 
-               pre : pre, 
-               year : year,
-               sem : sem
+               pre : pre
              }),
               dataType :"json",
               contentType :"application/json; charset=utf-8",
               success : function(data){
                 if (data == 1) {
                   $('#modal-sm').modal('hide');
+                  get_subj();
                   stoast('Data has been Updated  !', 'info');
                 }else{
                   switalert('error',"Can't Save Record.");
@@ -433,7 +205,8 @@
           }
         });
 
-// delete data---------------------------------------------
+
+  // delete data---------------------------------------------
         $(document).on("click","#delete", function(e){
           Swal.fire({
             title: 'Are you sure?',
@@ -459,6 +232,7 @@
                     'Your file has been deleted.',
                     'success'
                     )
+                    get_subj();
                   }else{
                     switalert('error', "Can't Delete Record.");
                   }
@@ -470,23 +244,51 @@
 
 
 
+// Store course---------------------------------------------
+    $('#save-button').on("click",function(e){
+      e.preventDefault();
+
+      var subject_name = $('#subject_name').val();
+      var subject_code = $('#subject_code').val();
+      var lec_unit = $('#lec_unit').val();
+      var lab_unit = $('#lab_unit').val();
+      var pre = $('#pre').val();
 
 
 
 
+      if ( subject_name =="" || subject_code =="" || lec_unit =="" || lab_unit =="") {
+        switalert('warning', 'All fields are required !');
+      }
+      else{
+        $.ajax({
+          url :"{{ url_for('subjects.subj_store')}}",
+          type :"POST",
+          data : JSON.stringify({
+           subject_name : subject_name, 
+           subject_code : subject_code, 
+           lec_unit : lec_unit, 
+           lab_unit : lab_unit, 
+           pre : pre
+         }),
 
+          dataType :"json",
+          contentType :"application/json; charset=utf-8",
+          success : function(data){
+            if (data == 1) {
+              $('#addForm').trigger("reset");
+              get_subj();
+              stoast('Data has been Saved  !', 'success');
+            }else{
+              switalert('error',"Can't Save Record.");
+            }
+          }
+        });
+      }
+    });
 
-
-
-  </script>
-
-
-  <script type="text/javascript">
-  //execute
-  load_courseSelect();
 
 </script>
-
 
 
 

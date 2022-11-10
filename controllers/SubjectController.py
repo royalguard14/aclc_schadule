@@ -4,20 +4,15 @@ import mysql.connector,os,ast,sys
 from dotenv import load_dotenv
 from models.Models import *
 from models.Schema import *
+subject_schema = SubjectSchema()
 
-
-dept_schema = Depttab()
-course_schema = Coursetab()
 load_dotenv()
-
 nows = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 cnx = mysql.connector.connect(host = os.getenv("APP_URL"),user = os.getenv("DB_USERNAME"), password = os.getenv("DB_PASSWORD"), database= os.getenv("DB_DATABASE"))
 cursor = cnx.cursor()
 
 def custom_response(res, status_code):
     return Response(mimetype="application/json",response=json.dumps(res),status=status_code)
-
-
 
 def subj_index():
     if 'logged_in' in session:
@@ -29,31 +24,7 @@ def subj_index():
             checker.append(x[0]['routeUri'])
          ###########################################   
         if request.endpoint in checker:
-            dept = Department.query.all()
-            data_s = dept_schema.dump(dept,many=True) 
-
-            coursss = Course.query.all()
-            data_s2 = course_schema.dump(coursss,many=True) 
-
-            dept_dics = {}
-            for ddd in data_s:
-                ids = str(ddd['id'])
-                vals = ddd['dept_name']
-                dept_dics[ids] = vals
-
-            corse_dics ={}
-            for ddds in data_s2:
-                ids2 = str(ddds['id'])
-                vals2 = ddds['course_name']
-                corse_dics[ids2] = vals2
-
-
-            cursor.execute('SELECT `id`, `course_id`, `subj_name`, `subj_code`, `units`, `pre_requisite`, `syr` FROM `subjects`')
-            data1 = cursor.fetchall()
-
-
-
-            return render_template('subject/index.html',subj_list = data1,course_list=corse_dics,dept_list = dept_dics)
+            return render_template('subject/index.html')
         else:
             return abort(403)
     else:
@@ -70,11 +41,8 @@ def subj_store():
          ###########################################   
         if request.endpoint.split(".")[0] in checker:
             data = request.get_json()
-
             units = str(data['lec_unit']) + "|" + str(data['lab_unit'])
-            syr = str(data['year']) + "|" + str(data['sem'])
-            
-            cursor.execute("INSERT INTO `subjects`(`course_id`, `subj_name`, `subj_code`, `units`, `pre_requisite`, `syr`, `created_at`, `updated_at`) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)",([data['select_course'],data['subject_name'],data['subject_code'],units,data['pre'],syr,nows, nows]))
+            cursor.execute("INSERT INTO `subjects`(`subj_name`, `subj_code`, `units`, `pre_requisite`, `created_at`, `updated_at`) VALUES (%s,%s,%s,%s,%s,%s)",([data['subject_name'],data['subject_code'], units, data['pre'],nows, nows]))
             cnx.commit()   
             return '1'
         else:
@@ -83,7 +51,40 @@ def subj_store():
         return abort(401)
 
 def subj_show():
-    ...
+    subjects = Subject.query.all()
+    data2 = subject_schema.dump(subjects,many=True) 
+    #AJAX
+    output = ''
+    ind = 0      
+    for x in data2:
+        unitss = x['units'].split('|')
+        sumunit = int(unitss[0]) + int(unitss[1])
+
+        ind = ind + 1
+        if ind % 2 == 0:
+            trc = '<tr class="even">'
+        else:
+             trc = '<tr class="odd">'
+
+        if x['pre_requisite'] == None:
+            pr = 'No Data'
+        else:
+            pr = x['pre_requisite']
+
+        output = output + trc
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(ind)
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(x['subj_name'])
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(x['subj_code'])
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(sumunit)
+        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(pr)
+        output = output + '<td>'
+        #output = output + '<button type="button" class="btn btn-success btn-xs" id="{}" onclick="editaccess(this)" ><i class="fa fa-folder-open"></i></button>'.format(x['id'])
+        #output = output + '<button type="button" class="btn btn-warning btn-xs" id="edit_prog" data-id="{}" data-program="{}" ><i class="fa fa-graduation-cap"></i></button>'.format(x['id'], x['dept_program'])
+        output = output + '<button type="button" class="btn btn-info btn-xs" id="edit"  data-id="{}" data-sname="{}" data-scode="{}" data-lac="{}" data-lab="{}" data-pre="{}" ><i class="fa fa-pencil"></i></button>'.format(x['id'], x['subj_name'], x['subj_code'], unitss[0], unitss[1], x['pre_requisite'])
+        output = output + '<button type="button" class="btn btn-danger btn-xs" id="delete" data-id="{}"><i class="fa fa-trash"></i></button>'.format(x['id'])
+        output = output + '</td>'
+        output = output + '</tr>' 
+    return output
 
 def subj_update():
     if 'logged_in' in session:
@@ -96,11 +97,8 @@ def subj_update():
          ###########################################   
         if request.endpoint.split(".")[0] in checker:
             data = request.get_json()
-
             units = str(data['lec_unit']) + "|" + str(data['lab_unit'])
-            syr = str(data['year']) + "|" + str(data['sem'])
-            print('======>', data)
-            cursor.execute("UPDATE `subjects` SET  `course_id`= %s, `subj_name`= %s, `subj_code`= %s, `units`= %s, `pre_requisite`= %s, `syr`= %s, `updated_at`= %s  WHERE `id` = %s",([data['select_course'], data['subject_name'], data['subject_code'], units, data['pre'], syr, nows, data['id']]))
+            cursor.execute("UPDATE `subjects` SET `subj_name`= %s,`subj_code`= %s,`units`= %s,`pre_requisite`=%s,`updated_at`=%s WHERE `id` = %s",([data['subject_name'], data['subject_code'], units, data['pre'], nows, data['id']]))
             cnx.commit()   
             return '1'
         else:
@@ -121,7 +119,6 @@ def subj_destroy():
             if session['role'] == '1' or  session['role'] == '2':
                 data = request.get_json()
                 cursor.execute("DELETE FROM `subjects` WHERE `id`=%s ",([data['id']]))
-                cursor.execute("DELETE FROM `schedules` WHERE `subj_id`=%s ",([data['id']]))
                 cnx.commit()
                 return  "1"
             return abort(403)
@@ -129,13 +126,3 @@ def subj_destroy():
             return abort(403)
     else:
         return abort(401)    
-
-
-
-def yearajax():
-    data = [(0,'Select Year'),('1st','First Year'),('2nd','Second Year'),('3rd','Third Year'),('4th','Forth Year')]
-    return data
-
-def semajax():
-    data = [(0,'Select Semester'),('1st','First Semester'),('2nd','Second Semester'),('3rd','Third Semester')]
-    return data
