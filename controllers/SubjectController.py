@@ -76,7 +76,7 @@ def subj_show():
         output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(x['subj_name'])
         output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(x['subj_code'])
         output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(sumunit)
-        output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(pr)
+        #output = output + '<td class="dtr-control" tabindex="0" >{}</td>'.format(pr)
         output = output + '<td>'
         #output = output + '<button type="button" class="btn btn-success btn-xs" id="{}" onclick="editaccess(this)" ><i class="fa fa-folder-open"></i></button>'.format(x['id'])
         #output = output + '<button type="button" class="btn btn-warning btn-xs" id="edit_prog" data-id="{}" data-program="{}" ><i class="fa fa-graduation-cap"></i></button>'.format(x['id'], x['dept_program'])

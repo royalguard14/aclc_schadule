@@ -1,0 +1,235 @@
+{% extends"layouts/master.html" %}
+{% block crump1 %}ROOMS{% endblock %}
+{% block crump2 %}Room{% endblock %}
+{% block content %}
+<div class="row">
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Add New Room</h3>
+        </div>
+      </div>
+      <div class="card-body">
+        <form id="addForm">
+          <div class="card-body">
+            <div class="form-group">
+              <label for="departmentAcronym">Room Name</label>
+              <input type="text"  id="room_name" class="form-control" required placeholder="Room name here">
+            </div>
+            <div class="form-group">
+              <label >Room Type</label>
+              <select class="form-control" id="room_type">
+                <option selected value="0">Select room</option>
+                <option value="Regular"> Regular </option>
+                <option value="Laboratory"> Laboratory </option>
+              </select>
+            </div>
+          </div>
+          <!-- /.card-body -->
+          <button type="submit" class="btn btn-primary float-right" id="save-button">Submit</button>
+        </form>
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col-md-6 -->
+  <div class="col-lg-8">
+    <div class="card">
+      <div class="card-header border-0">
+        <div class="d-flex justify-content-between">
+          <h3 class="card-title">Subject List</h3>
+        </div>
+      </div>
+      <div class="card-body" style=" width:auto; overflow-y: auto; height: 500px;">
+        <table id="excel_table" class="table table-bordered table-striped">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Room Name</th>
+              <th>Room Type</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="load-table">
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- /.card -->
+  </div>
+  <!-- /.col-md-6 -->
+</div>
+<!-- /.row -->
+<!-- Modal -->
+<div class="modal fade" id="modal-sm">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">EDIT Room</h4>
+      </div>
+      <div class="modal-body">
+        <form action="" id="edit-form">
+          <input type="text" name="sid" id="edit-id" hidden="">
+            <div class="form-group">
+              <label for="departmentAcronym">Room Name</label>
+              <input type="text" id="e_room_name" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label >Room Type</label>
+              <select class="form-control" id="e_room_type">
+                <option selected value="0">Select room</option>
+                <option value="Regular"> Regular </option>
+                <option value="Laboratory"> Laboratory </option>
+              </select>
+            </div>
+        </form>
+      </div>
+      <div class="modal-footer justify-content-between">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="edit-submit">Save changes</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+{% endblock %}
+{% block script %}
+<script type="text/javascript">
+get_room();
+// ajax data---------------------------------------------
+function get_room(){
+  $.ajax({
+    url: "{{ url_for('rooms.room_show')}}",
+    type:"get",
+    success: function(data){    
+      $('#load-table').empty().append(data);
+    }    
+  });
+}
+
+
+
+
+// Store course---------------------------------------------
+    $('#save-button').on("click",function(e){
+      e.preventDefault();
+
+      var room_name = $('#room_name').val();
+      var room_type = $('#room_type').val();
+
+      if ( room_name =="" || room_type == 0 ) {
+        switalert('warning', 'All fields are required !');
+      }
+      else{
+        $.ajax({
+          url :"{{ url_for('rooms.room_store')}}",
+          type :"POST",
+          data : JSON.stringify({
+           room_name : room_name, 
+           room_type : room_type, 
+         }),
+
+          dataType :"json",
+          contentType :"application/json; charset=utf-8",
+          success : function(data){
+            if (data == 1) {
+              $('#addForm').trigger("reset");
+              get_room();
+              stoast('Data has been Saved  !', 'success');
+            }else{
+              switalert('error',"Can't Save Record.");
+            }
+          }
+        });
+      }
+    });
+
+
+
+        // update data---------------------------------------------
+        $(document).on("click","#edit", function(e){
+          $('#modal-sm').modal('toggle');
+          var id = $(this).data("id");
+          var rname = $(this).data("rname");
+          var rtype = $(this).data("rtype");
+          $('#edit-id').val(id);
+          $('#e_room_name').val(rname);
+          $('#e_room_type').val(rtype);
+
+        });
+
+
+       $(document).on("click","#edit-submit", function(e){
+          e.preventDefault();
+          var id =  $('#edit-id').val();
+          var room_name = $('#e_room_name').val();
+          var room_type = $('#e_room_type').val();
+        
+          if (room_name =="" || room_type == 0) {
+            switalert('warning', 'All fields are required !');
+          }else {
+            $.ajax({
+              url :"{{ url_for('rooms.room_update')}}",
+              type :"POST",
+              data : JSON.stringify({
+               id : id,
+               room_name : room_name, 
+               room_type : room_type, 
+             }),
+              dataType :"json",
+              contentType :"application/json; charset=utf-8",
+              success : function(data){
+                if (data == 1) {
+                  $('#modal-sm').modal('hide');
+                  get_room();
+                  stoast('Data has been Updated  !', 'info');
+                }else{
+                  switalert('error',"Can't Save Record.");
+                }
+              }
+            });
+          }
+        });
+
+
+  // delete data---------------------------------------------
+        $(document).on("click","#delete", function(e){
+          Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              var course_id = $(this).data("id");
+              $.ajax({
+                url : "{{ url_for('rooms.room_destroy')}}",
+                type : "POST",
+                data : JSON.stringify({id : course_id}),
+                dataType : "json",
+                contentType : "application/json; charset=utf-8",
+                success : function(data){
+                  if (data == 1){
+                    Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                   get_room();
+                  }else{
+                    switalert('error', "Can't Delete Record.");
+                  }
+                }
+              });
+            }
+          })
+        });
+
+</script>
+{% endblock %}

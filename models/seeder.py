@@ -26,7 +26,7 @@ seeds =[
     Module(id= 6, module ='Courses', description ='Manage Courses', routeUri ='courses.course_index', icon ='fa-folder-closed', default_url ='course', encryptname ='121W7965D83319ZE'),
     Module(id= 7, module ='Subjects', description ='Manage Subjects', routeUri ='subjects.subj_index', icon ='fa-lightbulb', default_url ='subject', encryptname ='261O3893J60604ZG'),
     Module(id= 8, module ='Schedules', description ='Manage Schedules', routeUri ='schedules.sched_index', icon ='fa-calendar-check', default_url ='schedule', encryptname ='485K4994Q49984KI'),
-    Module(id= 9, module ='Rooms', description ='Manage Rooms', routeUri ='rooms.room_index', icon ='fa-calendar-check', default_url ='schedule', encryptname ='485K4994222Q49984KI'),
+    Module(id= 9, module ='Rooms', description ='Manage Rooms', routeUri ='rooms.room_index', icon ='fa-dungeon', default_url ='room', encryptname ='485K4994222Q49984KI'),
     Module(id= 10, module ='Instructors', description ='Manage Instructors', routeUri ='instructors.instructor_index', icon ='fa-chalkboard-user', default_url ='instructor', encryptname ='790Z4184C10740MS'),
     Module(id= 11, module ='Students', description ='Manage Students', routeUri ='students.student_index', icon ='fa-users-between-lines', default_url ='student', encryptname ='476Z7944T51754OQ'),
     Module(id= 12, module ='Setting', description ='Manage Setting', routeUri ='settings.role_index', icon ='fa-users-between-lines', default_url ='setting', encryptname ='476Z7944T51754OQsss'),
@@ -152,6 +152,29 @@ seeds =[
     Subject(id = 81 , subj_name='Physical Fitness' , subj_code = '6101' , units = '0|0', pre_requisite = wala , created_at = nows, updated_at = nows),
     Subject(id = 82 , subj_name='Readings in Philippine History' , subj_code = '6101' , units = '0|0', pre_requisite = wala , created_at = nows, updated_at = nows),
     Subject(id = 83 , subj_name='Pagbasa at Pagsulat Tungo sa Pananaliksik' , subj_code = '6200' , units = '0|0', pre_requisite = wala , created_at = nows, updated_at = nows),
+
+
+    #room CED 2021-2022
+    Room(id = 1, room_name = 'CL1', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 2, room_name = 'CL2', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 3, room_name = 'CL3', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 4, room_name = 'CL4', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 5, room_name = 'Multi/Physics/CL5', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 6, room_name = 'CSS1/CL6', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 7, room_name = 'CSS2/CL7', room_type = 'Laboratory', created_at = nows, updated_at = nows),
+    Room(id = 8, room_name = '301', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 9, room_name = '302', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 10, room_name = '303', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 11, room_name = '304', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 12, room_name = '201', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 13, room_name = '202', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 14, room_name = '101', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 15, room_name = '102', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 16, room_name = '103', room_type = 'Regular', created_at = nows, updated_at = nows),
+    Room(id = 17, room_name = '104', room_type = 'Regular', created_at = nows, updated_at = nows),
+
+
+
 ]
   
 db.bulk_save_objects(seeds)

@@ -133,7 +133,7 @@ rooms.route('/', methods=['GET'])(room_index)
 rooms.route('/create', methods=['POST'])(room_store)
 rooms.route('/edit', methods=['POST'])(room_update)
 rooms.route('/delete', methods=['POST'])(room_destroy)
-rooms.route('/show', methods=['POST'])(room_show)
+rooms.route('/show', methods=['GET'])(room_show)
 
 
 #User
